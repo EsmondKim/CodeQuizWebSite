@@ -1,7 +1,27 @@
+.hideButton {
+    display: none;
+}
+
 .hideQuestion {
     display: none;
 }
 
 .showQuestion {
+    display: visible;
+}
+
+.hideCorrect {
+    display: none;
+}
+
+.showCorrect {
+    display: visible;
+}
+
+.hideWrong {
+    display: none;
+}
+
+.showWrong {
     display: visible;
 }
