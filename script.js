@@ -1,4 +1,6 @@
 let beginButtonEl = document.querySelector("#beginButton");
+let correctChoiceEl = document.querySelector("#correctChoice");
+let incorrectChoiceEl = document.querySelector("#incorrectChoice");
 let question1El = document.querySelector("#question1");
 let question2El = document.querySelector("#question2");
 let question3El = document.querySelector("#question3");
@@ -17,8 +19,6 @@ let secondsDisplay = document.querySelector("#seconds");
 
 let totalSeconds = 120;
 let secondsElapsed = 0;
-let minutesLeft = 0;
-let interval;
 
 function beginKumite() {
     console.log("beginKumite");
@@ -28,16 +28,24 @@ function beginKumite() {
     startTimer();
 }
 //Start the clock function.
-function startTimer() {
-    interval = setInterval(function() {
-        secondsElapsed++;
-        renderTime();
+function startTimer() { 
+    let interval = setInterval(function() {
+    secondsElapsed++;
+    if (secondsElapsed === 120) {
+        clearInterval(interval);    
+     }
+     renderTime();
     }, 1000);
+}  
+
+function renderTime() {
+minutesDisplay.textContent = getFormattedMinutes();
+secondsDisplay.textContent = getFormattedSeconds();
 }
+
 function getFormattedMinutes() {
-    let secondsLeft = totalSeconds - secondsElapsed
+    let secondsLeft = totalSeconds - secondsElapsed;
     let minutesLeft = Math.floor(secondsLeft / 60);
-    let formattedMinutes = minutesLeft;
     if (minutesLeft < 1) {
         formattedMinutes = "0";
     }
@@ -46,22 +54,31 @@ function getFormattedMinutes() {
     }
     return formattedMinutes;
 }
-
 function getFormattedSeconds() {
-    let secondsLeft = ":" + (totalSeconds - secondsElapsed) % 60;
-    if(secondsLeft < 10) {
-        formattedSeconds = "0" + secondsLeft;
+    secondsLeft = ":" + (totalSeconds - secondsElapsed) % 60;
+    
+    if (secondsLeft < 10) {
+        secondsLeft = "0" + secondsLeft;
     }
-    else {
-        formattedSeconds = secondsLeft;
-    }
+
+    let formattedSeconds = secondsLeft;
     return formattedSeconds;
 }
-function renderTime() {
-    minutesDisplay.textContent = getFormattedMinutes();
-    secondsDisplay.textContent = getFormattedSeconds();
-}
+
 //Correct answer function, add time to the clock if correct, deduct if incorrect.
+function correctAnswerSubmit() {   
+    correctAnswer.classList.remove("hideCorrect");
+    correctAnswer.classList.add("showCorrect");
+    question1.classList.remove("showQuestion");
+    question1.classList.add("hideQuestion");    
+} 
+
+function incorrectAnswerSubmit() {
+    wrongAnswer.classList.remove("hideWrong");
+    wrongAnswer.classList.add("showWrong");
+    question1.classList.remove("showQuestion");
+    question1.classList.add("hideQuestion");    
+}
 
 //Show next question function.
 
@@ -69,8 +86,6 @@ function renderTime() {
 
 //High score from local storage function.
 
+correctChoiceEl.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceEl.addEventListener("click", incorrectAnswerSubmit);
 beginButtonEl.addEventListener("click", beginKumite);
-    
-
-
-
