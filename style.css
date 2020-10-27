@@ -25,3 +25,11 @@
 .showWrong {
     display: visible;
 }
+
+.hideGameOver {
+    display: none;
+}
+
+.showGameOver {
+    display: visible;
+}

@@ -28,7 +28,7 @@
         <a class="nav-link active text-primary" href="./highscores.html" style="font-family: Verdana, Arial, 'Lucida Console'">See High Scores</a>
         <li class="nav item" style="color: red; text-align: right; font-size: 25px; font-weight: bold; font-family: Verdana, Arial, 'Lucida Console';">Timer: </li>  
         <li id="minutes" class="nav item" style="color: red; text-align: right; font-size: 25px; font-weight: bold; font-family: Verdana, Arial, 'Lucida Console';">2</li>  
-        <li id="seconds" class="nav item" style="color: red; text-align: right; font-size: 25px; font-weight: bold; font-family: Verdana, Arial, 'Lucida Console';">:00</li>  
+        <li id="seconds" class="nav item" style="color: red; text-align: right; font-size: 25px; font-weight: bold; font-family: Verdana, Arial, 'Lucida Console';">:00</li>
       </ul>
     </nav>
   </div>
@@ -105,7 +105,8 @@
         <div class="card-body">
           <h5 class="card-title">CORRECT!</h5>
           <p class="card-text" style="text-align: center">You are dominating the fight! Keep it up!</p>
-          <a href="#" class="btn btn-primary">Continue Kickin' JavaScript @$$!</a>
+          <a href="#" class="btn btn-primary" id="kickAss">Continue Kickin' JavaScript @$$!</a>
+          <p>Hit this button, get a bonus five seconds to fight!</p>
           </div>
         </div>
       </div>
@@ -119,14 +120,40 @@
         <div class="card-body">
           <h5 class="card-title">WRONG!</h5>
           <p class="card-text" style="text-align: center">Chong Li is pounding on you!  Are you really built for this? Get back in the JavaScript FIGHT!</p>
-          <a href="#" class="btn btn-primary">Next Question</a>
+          <a href="#" class="btn btn-primary" id="builtForThis">Next Question</a>
+          <p>Hit this button, lose five seconds of time!</p>
               </div>
            </div>
         </div>
      </div>
 
-   
+     <!--Game Over Card.-->
+     <div class="row">
+      <div class="col-xl-12 col-md-6 col-xs-6">
+      <div id="gameOver" class="card hideGameOver" style="width: 18rem;">
+        <img src="./Assets/blind.jpg" class="card-img-top" alt="Frank Dux is blind and over.">
+        <div class="card-body">
+          <h5 class="card-title">GAME Over</h5>
+          <p class="card-text" style="text-align: center">Chong Li DEFEATED YOU! FATALITY!</p>
+          <a href="./index.html" class="btn btn-primary" id="startOver">Start Quiz Over</a>
+          <p>Keep fighting the JavaScript Fight!</p>
+              </div>
+           </div>
+        </div>
+     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+      
 
 
   </div>
@@ -136,4 +163,3 @@
 
 </body>
 </html>
-
