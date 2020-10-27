@@ -60,7 +60,7 @@ function getFormattedSeconds() {
         formattedSeconds = ":0" + (totalSeconds) % 60;
     }
     
-    else if (totalSeconds < 10) {
+    if (totalSeconds < 10) {
         formattedSeconds = ":0" + (totalSeconds) % 60;
     }
 
