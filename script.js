@@ -25,10 +25,13 @@ let nextQuestion = [question1, question2];
 let nextQuestionOperate = 0;
 let nextQuestionIndex;
 //Setting the initial time to start the game.
-let totalSeconds = 120;
+let totalSeconds = 10;
 
 let playerScoreEl = document.querySelector("#playerScore");
 playerScoreCount = 0;
+let topHighScore = 0;
+let secondHighScore = 0;
+let thirdHighScore = 0;
 
 function beginKumite() {
     console.log("beginKumite");
@@ -145,7 +148,27 @@ function getFormattedSeconds() {
     nextQuestionIndex.classList.add("hideQuestion");
     gameOverEl.classList.remove("hideGameOver");
     gameOverEl.classList.add("showGameOver");
-}
+//If statements to test for high scores 1-3.
+    if (playerScoreCount > topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
+        localStorage.setItem("highScore", playerScoreCount);
+        let playerInitials1 = prompt("You kicked butt. Enter Your Initials.");
+        localStorage.setItem("topInitials", playerInitials1);
+        }
+    if (playerScoreCount < topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
+        localStorage.setItem("secondScore", playerScoreCount);
+        let playerInitials2 = prompt("You kicked butt. Enter Your Initials.");
+        localStorage.setItem("topInitials", playerInitials2);
+        }   
+    if (playerScoreCount < topHighScore && playerScoreCount < secondHighScore && playerScoreCount > thirdHighScore) {
+        localStorage.setItem("thirdScore", playerScoreCount);
+        let playerInitials3 = prompt("You kicked butt. Enter Your Initials.");
+        localStorage.setItem("topInitials", playerInitials3);
+        }
+    }
+
+//opHighScore = 0;
+//let secondHighScore = 0;
+//let thirdHighScore = 0;
 
 //Or player wins if they complete question 10 with time left.  
 //Embed a specific question10 id to the correct answer to trigger the win screen.
