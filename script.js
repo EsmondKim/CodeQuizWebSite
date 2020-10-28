@@ -157,12 +157,12 @@ function getFormattedSeconds() {
     if (playerScoreCount < topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
         localStorage.setItem("secondScore", playerScoreCount);
         let playerInitials2 = prompt("You kicked butt. Enter Your Initials.");
-        localStorage.setItem("topInitials", playerInitials2);
+        localStorage.setItem("secondInitials", playerInitials2);
         }   
     if (playerScoreCount < topHighScore && playerScoreCount < secondHighScore && playerScoreCount > thirdHighScore) {
         localStorage.setItem("thirdScore", playerScoreCount);
         let playerInitials3 = prompt("You kicked butt. Enter Your Initials.");
-        localStorage.setItem("topInitials", playerInitials3);
+        localStorage.setItem("thirdInitials", playerInitials3);
         }
     }
 
