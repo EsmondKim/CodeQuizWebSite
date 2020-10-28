@@ -27,7 +27,8 @@ let nextQuestionIndex;
 //Setting the initial time to start the game.
 let totalSeconds = 120;
 
-let playerScoreEl = 0;
+let playerScoreEl = document.querySelector("#playerScore");
+playerScoreCount = 0;
 
 function beginKumite() {
     console.log("beginKumite");
@@ -66,9 +67,14 @@ function getFormattedMinutes() {
     }
     return formattedMinutes;
 }
+//Need to format seconds for single digits above 2:00 min. (Accounting for bonus seconds)
 function getFormattedSeconds() {
     secondsLeft = ":" + (totalSeconds) % 60;
     let formattedSeconds = secondsLeft
+
+    if (totalSeconds > 119 && totalSeconds < 130) {
+        formattedSeconds = ":0" + (totalSeconds) % 60;
+    }
 
     if (totalSeconds < 70 && totalSeconds > 59) {
         formattedSeconds = ":0" + (totalSeconds) % 60;
@@ -108,7 +114,9 @@ function getFormattedSeconds() {
         nextQuestionIndex.classList.add("showQuestion");
         correctAnswer.classList.remove("showCorrect");
         correctAnswer.classList.add("hideCorrect");
-        totalSeconds = totalSeconds + 5;     
+        totalSeconds = totalSeconds + 5;
+        playerScoreCount = playerScoreCount + 100000;
+        renderScore();     
     }
 
     function moreBuiltForThis() {
@@ -120,7 +128,14 @@ function getFormattedSeconds() {
         nextQuestionIndex.classList.add("showQuestion");
         wrongAnswer.classList.remove("showWrong");
         wrongAnswer.classList.add("hideWrong");  
-        totalSeconds = totalSeconds - 5;   
+        totalSeconds = totalSeconds - 5;
+        playerScoreCount = playerScoreCount - 50000;
+        renderScore();   
+    }
+
+    function renderScore(){
+        playerScoreEl.textContent = playerScoreCount;
+        console.log(playerScoreCount);
     }
 //End the quiz function.
 //Quiz ends when timere hits 0, 
