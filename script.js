@@ -85,7 +85,7 @@ function beginKumite() {
 }
 //Start the clock function.
 function startTimer() { 
-    let interval = setInterval(function() {
+    interval = setInterval(function() {
     totalSeconds--;
     if (totalSeconds === 0) {
         clearInterval(interval);    
@@ -94,6 +94,10 @@ function startTimer() {
      renderTime();
     }, 1000);
 }   
+ 
+function stopTheTimer() {
+    clearInterval (interval);
+}
 
 function renderTime() {
 minutesDisplay.textContent = getFormattedMinutes();
@@ -212,13 +216,18 @@ function getFormattedSeconds() {
 //Embed a specific question10 id to the correct answer to trigger the win screen.
 //Wrong answer for question10 get a "try again" screen for question 10.
     function question10Ender() {
+        nextQuestionIndex.classList.remove("showQuestion");
+        nextQuestionIndex.classList.add("hideQuestion");
+
         if (playerScoreCount > 0) {
             goodEnding.classList.remove("hideGoodEnding");
             goodEnding.classList.add("showGoodEnding");
+            stopTheTimer();
         }
         if (playerScoreCount < 0) {
             badEnding.classList.remove("hideBadEnding");
             badEnding.classList.add("showBadEnding");
+            stopTheTimer();
             }
 
         if (playerScoreCount > topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
@@ -237,6 +246,7 @@ function getFormattedSeconds() {
             localStorage.setItem("thirdInitials", playerInitials3);
             }
         }     
+
 
 //Button click listeners.
 correctChoiceQ1El.addEventListener("click", correctAnswerSubmit);
