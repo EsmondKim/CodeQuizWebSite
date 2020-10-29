@@ -1,6 +1,27 @@
 let beginButtonEl = document.querySelector("#beginButton");
-let correctChoiceEl = document.querySelector("#correctChoice");
-let incorrectChoiceEl = document.querySelector("#incorrectChoice");
+
+let correctChoiceQ1El = document.querySelector("#correctChoiceQ1");
+let incorrectChoiceQ1El = document.querySelector("#incorrectChoiceQ1");
+let correctChoiceQ2El = document.querySelector("#correctChoiceQ2");
+let incorrectChoiceQ2El = document.querySelector("#incorrectChoiceQ2");
+let correctChoiceQ3El = document.querySelector("#correctChoiceQ3");
+let incorrectChoiceQ3El = document.querySelector("#incorrectChoiceQ3");
+let correctChoiceQ4El = document.querySelector("#correctChoiceQ4");
+let incorrectChoiceQ4El = document.querySelector("#incorrectChoiceQ4");
+let correctChoiceQ5El = document.querySelector("#correctChoiceQ5");
+let incorrectChoiceQ5El = document.querySelector("#incorrectChoiceQ5");
+let correctChoiceQ6El = document.querySelector("#correctChoiceQ6");
+let incorrectChoiceQ6El = document.querySelector("#incorrectChoiceQ6");
+let correctChoiceQ7El = document.querySelector("#correctChoiceQ7");
+let incorrectChoiceQ7El = document.querySelector("#incorrectChoiceQ7");
+let correctChoiceQ8El = document.querySelector("#correctChoiceQ8");
+let incorrectChoiceQ8El = document.querySelector("#incorrectChoiceQ8");
+let correctChoiceQ9El = document.querySelector("#correctChoiceQ9");
+let incorrectChoiceQ9El = document.querySelector("#incorrectChoiceQ9");
+let correctChoiceQ10El = document.querySelector("#correctChoiceQ10");
+let incorrectChoiceQ10El = document.querySelector("#incorrectChoiceQ10");
+
+
 let question1El = document.querySelector("#question1");
 let question2El = document.querySelector("#question2");
 let question3El = document.querySelector("#question3");
@@ -11,6 +32,7 @@ let question7El = document.querySelector("#question7");
 let question8El = document.querySelector("#question8");
 let question9El = document.querySelector("#question9");
 let question10El = document.querySelector("#question10");
+
 let correctAnswerEl = document.querySelector("#correctAnswer");
 let wrongAnswerEl = document.querySelector("#wrongAnswer");
 let kickAssEl = document.querySelector("#kickAss");
@@ -25,7 +47,7 @@ let nextQuestion = [question1, question2];
 let nextQuestionOperate = 0;
 let nextQuestionIndex;
 //Setting the initial time to start the game.
-let totalSeconds = 10;
+let totalSeconds = 120;
 
 let playerScoreEl = document.querySelector("#playerScore");
 playerScoreCount = 0;
@@ -135,7 +157,7 @@ function getFormattedSeconds() {
         playerScoreCount = playerScoreCount - 50000;
         renderScore();   
     }
-
+    
     function renderScore(){
         playerScoreEl.textContent = playerScoreCount;
         console.log(playerScoreCount);
@@ -165,21 +187,41 @@ function getFormattedSeconds() {
         localStorage.setItem("thirdInitials", playerInitials3);
         }
     }
-
-//opHighScore = 0;
-//let secondHighScore = 0;
-//let thirdHighScore = 0;
-
 //Or player wins if they complete question 10 with time left.  
 //Embed a specific question10 id to the correct answer to trigger the win screen.
 //Wrong answer for question10 get a "try again" screen for question 10.
 
+//Button click listeners.
+correctChoiceQ1El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ1El.addEventListener("click", incorrectAnswerSubmit);
 
-//High score from local storage function.
+correctChoiceQ2El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ2El.addEventListener("click", incorrectAnswerSubmit);
 
+correctChoiceQ3El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ3El.addEventListener("click", incorrectAnswerSubmit);
 
-correctChoiceEl.addEventListener("click", correctAnswerSubmit);
-incorrectChoiceEl.addEventListener("click", incorrectAnswerSubmit);
+correctChoiceQ4El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ4El.addEventListener("click", incorrectAnswerSubmit);
+
+correctChoiceQ5El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ5El.addEventListener("click", incorrectAnswerSubmit);
+
+correctChoiceQ6El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ6El.addEventListener("click", incorrectAnswerSubmit);
+
+correctChoiceQ7El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ7El.addEventListener("click", incorrectAnswerSubmit);
+
+correctChoiceQ8El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ8El.addEventListener("click", incorrectAnswerSubmit);
+
+correctChoiceQ9El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ9El.addEventListener("click", incorrectAnswerSubmit);
+
+correctChoiceQ10El.addEventListener("click", correctAnswerSubmit);
+incorrectChoiceQ10El.addEventListener("click", incorrectAnswerSubmit);
+
 beginButtonEl.addEventListener("click", beginKumite);
 kickAssEl.addEventListener("click", kickMoreAss);
 builtForThisEl.addEventListener("click", moreBuiltForThis);
