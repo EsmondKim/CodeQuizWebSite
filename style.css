@@ -33,3 +33,19 @@
 .showGameOver {
     display: visible;
 }
+
+.hideGoodEnding {
+    display: none;
+}
+
+.showGoodEnding {
+    display: visible;
+}
+
+.hideBadEnding {
+    display: none;
+}
+
+.showBadEnding {
+    display: visible;
+}

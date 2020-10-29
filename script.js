@@ -57,6 +57,9 @@ let gameOverEl = document.querySelector("#gameOver");
 let minutesDisplay = document.querySelector("#minutes");
 let secondsDisplay = document.querySelector("#seconds");
 
+let goodEndingEl = document.querySelector("#goodEnding");
+let badEndingEl = document.querySelector("#badEnding");
+
 //Creating an array to use in next question function.
 let nextQuestion = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10];
 let nextQuestionOperate = 0;
@@ -180,7 +183,7 @@ function getFormattedSeconds() {
         console.log(playerScoreCount);
     }
 //End the quiz function.
-//Quiz ends when timere hits 0, 
+//Quiz ends when timer hits 0, 
     function gameOverFunc() {
     console.log("game over");
     nextQuestionIndex.classList.remove("showQuestion");
@@ -204,9 +207,36 @@ function getFormattedSeconds() {
         localStorage.setItem("thirdInitials", playerInitials3);
         }
     }
+
 //Or player wins if they complete question 10 with time left.  
 //Embed a specific question10 id to the correct answer to trigger the win screen.
 //Wrong answer for question10 get a "try again" screen for question 10.
+    function question10Ender() {
+        if (playerScoreCount > 0) {
+            goodEnding.classList.remove("hideGoodEnding");
+            goodEnding.classList.add("showGoodEnding");
+        }
+        if (playerScoreCount < 0) {
+            badEnding.classList.remove("hideBadEnding");
+            badEnding.classList.add("showBadEnding");
+            }
+
+        if (playerScoreCount > topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
+            localStorage.setItem("highScore", playerScoreCount);
+            let playerInitials1 = prompt("You kicked butt. Enter Your Initials.");
+            localStorage.setItem("topInitials", playerInitials1);
+            }
+        if (playerScoreCount < topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
+            localStorage.setItem("secondScore", playerScoreCount);
+            let playerInitials2 = prompt("You kicked butt. Enter Your Initials.");
+            localStorage.setItem("secondInitials", playerInitials2);
+            }   
+        if (playerScoreCount < topHighScore && playerScoreCount < secondHighScore && playerScoreCount > thirdHighScore) {
+            localStorage.setItem("thirdScore", playerScoreCount);
+            let playerInitials3 = prompt("You kicked butt. Enter Your Initials.");
+            localStorage.setItem("thirdInitials", playerInitials3);
+            }
+        }     
 
 //Button click listeners.
 correctChoiceQ1El.addEventListener("click", correctAnswerSubmit);
@@ -250,10 +280,10 @@ incorrectChoiceQ9El.addEventListener("click", incorrectAnswerSubmit);
 incorrectChoiceQ9AEl.addEventListener("click", incorrectAnswerSubmit);
 incorrectChoiceQ9BEl.addEventListener("click", incorrectAnswerSubmit);
 
-correctChoiceQ10El.addEventListener("click", correctAnswerSubmit);
-incorrectChoiceQ10El.addEventListener("click", incorrectAnswerSubmit);
-incorrectChoiceQ10AEl.addEventListener("click", incorrectAnswerSubmit);
-incorrectChoiceQ10BEl.addEventListener("click", incorrectAnswerSubmit);
+correctChoiceQ10El.addEventListener("click", question10Ender);
+incorrectChoiceQ10El.addEventListener("click", question10Ender);
+incorrectChoiceQ10AEl.addEventListener("click", question10Ender);
+incorrectChoiceQ10BEl.addEventListener("click", question10Ender);
 
 beginButtonEl.addEventListener("click", beginKumite);
 kickAssEl.addEventListener("click", kickMoreAss);
