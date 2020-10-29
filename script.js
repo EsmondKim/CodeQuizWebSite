@@ -218,17 +218,16 @@ function getFormattedSeconds() {
     function question10Ender() {
         nextQuestionIndex.classList.remove("showQuestion");
         nextQuestionIndex.classList.add("hideQuestion");
+        stopTheTimer();
 
         if (playerScoreCount > 0) {
             goodEnding.classList.remove("hideGoodEnding");
-            goodEnding.classList.add("showGoodEnding");
-            stopTheTimer();
+            goodEnding.classList.add("showGoodEnding");       
         }
         if (playerScoreCount < 0) {
             badEnding.classList.remove("hideBadEnding");
             badEnding.classList.add("showBadEnding");
-            stopTheTimer();
-            }
+        }
 
         if (playerScoreCount > topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
             localStorage.setItem("highScore", playerScoreCount);
@@ -246,7 +245,7 @@ function getFormattedSeconds() {
             localStorage.setItem("thirdInitials", playerInitials3);
             }
         }     
-
+ 
 
 //Button click listeners.
 correctChoiceQ1El.addEventListener("click", correctAnswerSubmit);
