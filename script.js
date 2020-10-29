@@ -2,25 +2,40 @@ let beginButtonEl = document.querySelector("#beginButton");
 
 let correctChoiceQ1El = document.querySelector("#correctChoiceQ1");
 let incorrectChoiceQ1El = document.querySelector("#incorrectChoiceQ1");
+let incorrectChoiceQ1AEl = document.querySelector("#incorrectChoiceQ1A");
+let incorrectChoiceQ1BEl = document.querySelector("#incorrectChoiceQ1B");
 let correctChoiceQ2El = document.querySelector("#correctChoiceQ2");
 let incorrectChoiceQ2El = document.querySelector("#incorrectChoiceQ2");
+let incorrectChoiceQ2AEl = document.querySelector("#incorrectChoiceQ2A");
+let incorrectChoiceQ2BEl = document.querySelector("#incorrectChoiceQ2B");
 let correctChoiceQ3El = document.querySelector("#correctChoiceQ3");
 let incorrectChoiceQ3El = document.querySelector("#incorrectChoiceQ3");
 let correctChoiceQ4El = document.querySelector("#correctChoiceQ4");
 let incorrectChoiceQ4El = document.querySelector("#incorrectChoiceQ4");
 let correctChoiceQ5El = document.querySelector("#correctChoiceQ5");
 let incorrectChoiceQ5El = document.querySelector("#incorrectChoiceQ5");
+let incorrectChoiceQ5AEl = document.querySelector("#incorrectChoiceQ5A");
+let incorrectChoiceQ5BEl = document.querySelector("#incorrectChoiceQ5B");
 let correctChoiceQ6El = document.querySelector("#correctChoiceQ6");
 let incorrectChoiceQ6El = document.querySelector("#incorrectChoiceQ6");
+let incorrectChoiceQ6AEl = document.querySelector("#incorrectChoiceQ6A");
+let incorrectChoiceQ6BEl = document.querySelector("#incorrectChoiceQ6B");
 let correctChoiceQ7El = document.querySelector("#correctChoiceQ7");
 let incorrectChoiceQ7El = document.querySelector("#incorrectChoiceQ7");
+let incorrectChoiceQ7AEl = document.querySelector("#incorrectChoiceQ7A");
+let incorrectChoiceQ7BEl = document.querySelector("#incorrectChoiceQ7B");
 let correctChoiceQ8El = document.querySelector("#correctChoiceQ8");
 let incorrectChoiceQ8El = document.querySelector("#incorrectChoiceQ8");
+let incorrectChoiceQ8AEl = document.querySelector("#incorrectChoiceQ8A");
+let incorrectChoiceQ8BEl = document.querySelector("#incorrectChoiceQ8B");
 let correctChoiceQ9El = document.querySelector("#correctChoiceQ9");
 let incorrectChoiceQ9El = document.querySelector("#incorrectChoiceQ9");
+let incorrectChoiceQ9AEl = document.querySelector("#incorrectChoiceQ9A");
+let incorrectChoiceQ9BEl = document.querySelector("#incorrectChoiceQ9B");
 let correctChoiceQ10El = document.querySelector("#correctChoiceQ10");
 let incorrectChoiceQ10El = document.querySelector("#incorrectChoiceQ10");
-
+let incorrectChoiceQ10AEl = document.querySelector("#incorrectChoiceQ10A");
+let incorrectChoiceQ10BEl = document.querySelector("#incorrectChoiceQ10B");
 
 let question1El = document.querySelector("#question1");
 let question2El = document.querySelector("#question2");
@@ -125,6 +140,7 @@ function getFormattedSeconds() {
     } 
     
     function incorrectAnswerSubmit() {
+        console.log("Incorrect answer submit.")
         nextQuestionIndex.classList.remove("showQuestion");
         nextQuestionIndex.classList.add("hideQuestion");
         wrongAnswer.classList.remove("hideWrong");
@@ -195,9 +211,13 @@ function getFormattedSeconds() {
 //Button click listeners.
 correctChoiceQ1El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ1El.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ1AEl.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ1BEl.addEventListener("click", incorrectAnswerSubmit);
 
 correctChoiceQ2El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ2El.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ2AEl.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ2BEl.addEventListener("click", incorrectAnswerSubmit);
 
 correctChoiceQ3El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ3El.addEventListener("click", incorrectAnswerSubmit);
@@ -207,21 +227,33 @@ incorrectChoiceQ4El.addEventListener("click", incorrectAnswerSubmit);
 
 correctChoiceQ5El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ5El.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ5AEl.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ5BEl.addEventListener("click", incorrectAnswerSubmit);
 
 correctChoiceQ6El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ6El.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ6AEl.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ6BEl.addEventListener("click", incorrectAnswerSubmit);
 
 correctChoiceQ7El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ7El.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ7AEl.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ7BEl.addEventListener("click", incorrectAnswerSubmit);
 
 correctChoiceQ8El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ8El.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ8AEl.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ8BEl.addEventListener("click", incorrectAnswerSubmit);
 
 correctChoiceQ9El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ9El.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ9AEl.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ9BEl.addEventListener("click", incorrectAnswerSubmit);
 
 correctChoiceQ10El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ10El.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ10AEl.addEventListener("click", incorrectAnswerSubmit);
+incorrectChoiceQ10BEl.addEventListener("click", incorrectAnswerSubmit);
 
 beginButtonEl.addEventListener("click", beginKumite);
 kickAssEl.addEventListener("click", kickMoreAss);
