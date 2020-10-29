@@ -43,7 +43,7 @@ let minutesDisplay = document.querySelector("#minutes");
 let secondsDisplay = document.querySelector("#seconds");
 
 //Creating an array to use in next question function.
-let nextQuestion = [question1, question2];
+let nextQuestion = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10];
 let nextQuestionOperate = 0;
 let nextQuestionIndex;
 //Setting the initial time to start the game.
@@ -117,6 +117,7 @@ function getFormattedSeconds() {
     //Here, consider an array with question1-10, and i increments each time a right or wrong answer screem is clicked.
     
     function correctAnswerSubmit() {   
+        console.log("Correct Answer Submit")
         nextQuestionIndex.classList.remove("showQuestion");
         nextQuestionIndex.classList.add("hideQuestion");
         correctAnswer.classList.remove("hideCorrect");
