@@ -6,19 +6,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>High Scores!</title>
 </head>
-<body>
+<body style="background-color:#F5F5F5;">
+
 <div class="container"></div>
+
+<div class="row">
+  <div class="col-xl-12 col-md-6 col-xs-6">
+  <br>
+  </div>
+  </div>  
 
 <div class="row " style="float: left">
     <div class="col-xl-6 col-md-6 col-xs-6">
     <div class="card" style="width: 18rem;">
         <div class="card-header bg-warning" style="color: red; text-align: center; font-size: 25px; font-weight: bold; font-family: Verdana, Arial, 'Lucida Console';">
-          Today's Top 3 High Scores
+          Last Score
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item" id="numberOneScore">Top Score</li>
-          <li class="list-group-item" id="numberTwoScore">Second Score</li>
-          <li class="list-group-item" id=numberThreeScore>Third Score</li>
+          <li class="list-group-item" id="lastFighterScore">Last Fighter's Score</li>
         </ul>
       </div>
     </div>
@@ -28,26 +33,28 @@
   <div class="col-xl-6 col-md-6 col-xs-6">
     <div class="card" style="width: 18rem;">
         <div class="card-header bg-warning" style="color: red; text-align: center; font-size: 25px; font-weight: bold; font-family: Verdana, Arial, 'Lucida Console';">
-          Today's Top 3 Players
+         Last Fighter
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item" id="numberOnePlayer">Top Player</li>
-          <li class="list-group-item" id="numberTwoPlayer">Second Player</li>
-          <li class="list-group-item" id=numberThreePlayer>Third Player</li>
+          <li class="list-group-item" id="lastFighter">Last Fighter's Initials</li>
         </ul>
       </div>
     </div>
   </div>
 
-  
   <div class="row">
     <div class="col-xl-12 col-md-6 col-xs-6">
-        <a href="./index.html" class="btn btn-primary" id="startOver">Start Quiz Over</a>
-        <p>Keep fighting the JavaScript Fight!</p>
+    <br>
     </div>
-  </div>
-   
+    </div>  
 
+  <div class="row">
+    <div class="col-xl-12 col-md-6 col-xs-6">
+      <a href="./index.html" class="btn btn-primary" id="startOver">Start Quiz Over</a>
+        <p>Keep fighting the JavaScript Fight!</p>
+      </div>
+    </div>
+   
     <script src="./highscorescript.js"></script>
 </body>
 </html>

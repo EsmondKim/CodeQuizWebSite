@@ -49,3 +49,11 @@
 .showBadEnding {
     display: visible;
 }
+
+.hideMinutes {
+    display: none;
+}
+
+.hideSeconds {
+    display: none;
+}

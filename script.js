@@ -60,6 +60,9 @@ let secondsDisplay = document.querySelector("#seconds");
 let goodEndingEl = document.querySelector("#goodEnding");
 let badEndingEl = document.querySelector("#badEnding");
 
+let minutesEl = document.querySelector("#minutes");
+let secondsEl = document.querySelector("#seconds");
+
 //Creating an array to use in next question function.
 let nextQuestion = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10];
 let nextQuestionOperate = 0;
@@ -68,10 +71,7 @@ let nextQuestionIndex;
 let totalSeconds = 120;
 
 let playerScoreEl = document.querySelector("#playerScore");
-playerScoreCount = 0;
-let topHighScore = 0;
-let secondHighScore = 0;
-let thirdHighScore = 0;
+let playerScoreCount = 0;
 
 function beginKumite() {
     console.log("beginKumite");
@@ -87,9 +87,10 @@ function beginKumite() {
 function startTimer() { 
     interval = setInterval(function() {
     totalSeconds--;
-    if (totalSeconds === 0) {
-        clearInterval(interval);    
+    //set to -1 so clock shows 0:00 at end of game
+    if (totalSeconds === -1) {
         gameOverFunc();
+        clearInterval(interval);    
      }
      renderTime();
     }, 1000);
@@ -127,17 +128,15 @@ function getFormattedSeconds() {
         formattedSeconds = ":0" + (totalSeconds) % 60;
     }
     
-    else if (totalSeconds < 10) {
+    if (totalSeconds < 10) {
         formattedSeconds = ":0" + (totalSeconds) % 60;
-    }
-
+    } 
     return formattedSeconds;
 }
 
 //Correct answer function, add time to the clock if correct, deduct if incorrect.
 //Show next question function.
-    //Here, consider an array with question1-10, and i increments each time a right or wrong answer screem is clicked.
-    
+//Here, consider an array with question1-10, and i increments each time a right or wrong answer screem is clicked.
     function correctAnswerSubmit() {   
         console.log("Correct Answer Submit")
         nextQuestionIndex.classList.remove("showQuestion");
@@ -190,63 +189,60 @@ function getFormattedSeconds() {
 //Quiz ends when timer hits 0, 
     function gameOverFunc() {
     console.log("game over");
+    minutes.classList.add("hideMinutes");
+    seconds.classList.add("hideSeconds");
     nextQuestionIndex.classList.remove("showQuestion");
     nextQuestionIndex.classList.add("hideQuestion");
     gameOverEl.classList.remove("hideGameOver");
     gameOverEl.classList.add("showGameOver");
-//If statements to test for high scores 1-3.
-    if (playerScoreCount > topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
-        localStorage.setItem("highScore", playerScoreCount);
-        let playerInitials1 = prompt("You kicked butt. Enter Your Initials.");
-        localStorage.setItem("topInitials", playerInitials1);
-        }
-    if (playerScoreCount < topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
-        localStorage.setItem("secondScore", playerScoreCount);
-        let playerInitials2 = prompt("You kicked butt. Enter Your Initials.");
-        localStorage.setItem("secondInitials", playerInitials2);
-        }   
-    if (playerScoreCount < topHighScore && playerScoreCount < secondHighScore && playerScoreCount > thirdHighScore) {
-        localStorage.setItem("thirdScore", playerScoreCount);
-        let playerInitials3 = prompt("You kicked butt. Enter Your Initials.");
-        localStorage.setItem("thirdInitials", playerInitials3);
-        }
-    }
+    renderScore();
+    
+    let playerInitials = prompt("Game Over. Enter Your Initials.");
+    localStorage.setItem("lastFighterScore", playerScoreCount);
+    localStorage.setItem("lastFighter", playerInitials);    
+    }    
 
 //Or player wins if they complete question 10 with time left.  
-//Embed a specific question10 id to the correct answer to trigger the win screen.
-//Wrong answer for question10 get a "try again" screen for question 10.
-    function question10Ender() {
+    function question10EnderCorrect() {
+        playerScoreCount = playerScoreCount + 100000;
         nextQuestionIndex.classList.remove("showQuestion");
         nextQuestionIndex.classList.add("hideQuestion");
+        renderScore();
         stopTheTimer();
-
+       
         if (playerScoreCount > 0) {
             goodEnding.classList.remove("hideGoodEnding");
             goodEnding.classList.add("showGoodEnding");       
-        }
+            }
         if (playerScoreCount < 0) {
             badEnding.classList.remove("hideBadEnding");
             badEnding.classList.add("showBadEnding");
-        }
+            }
+        let playerInitials = prompt("Yup, he won for The Last King of Scotland! Enter Your Initials.");
+        localStorage.setItem("lastFighterScore", playerScoreCount);
+        localStorage.setItem("lastFighter", playerInitials);     
+        }    
 
-        if (playerScoreCount > topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
-            localStorage.setItem("highScore", playerScoreCount);
-            let playerInitials1 = prompt("You kicked butt. Enter Your Initials.");
-            localStorage.setItem("topInitials", playerInitials1);
+    function question10EnderIncorrect() {
+        playerScoreCount = playerScoreCount - 50000;
+        nextQuestionIndex.classList.remove("showQuestion");
+        nextQuestionIndex.classList.add("hideQuestion");
+        renderScore();
+        stopTheTimer();
+   
+        if (playerScoreCount > 0) {
+            goodEnding.classList.remove("hideGoodEnding");
+            goodEnding.classList.add("showGoodEnding");       
             }
-        if (playerScoreCount < topHighScore && playerScoreCount > secondHighScore && playerScoreCount > thirdHighScore) {
-            localStorage.setItem("secondScore", playerScoreCount);
-            let playerInitials2 = prompt("You kicked butt. Enter Your Initials.");
-            localStorage.setItem("secondInitials", playerInitials2);
-            }   
-        if (playerScoreCount < topHighScore && playerScoreCount < secondHighScore && playerScoreCount > thirdHighScore) {
-            localStorage.setItem("thirdScore", playerScoreCount);
-            let playerInitials3 = prompt("You kicked butt. Enter Your Initials.");
-            localStorage.setItem("thirdInitials", playerInitials3);
+        if (playerScoreCount < 0) {
+            badEnding.classList.remove("hideBadEnding");
+            badEnding.classList.add("showBadEnding");
             }
+        let playerInitials = prompt("Nope, it was Last King of Scotland. Enter Your Initials.");
+        localStorage.setItem("lastFighterScore", playerScoreCount);
+        localStorage.setItem("lastFighter", playerInitials);     
         }     
- 
-
+    
 //Button click listeners.
 correctChoiceQ1El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ1El.addEventListener("click", incorrectAnswerSubmit);
@@ -289,10 +285,10 @@ incorrectChoiceQ9El.addEventListener("click", incorrectAnswerSubmit);
 incorrectChoiceQ9AEl.addEventListener("click", incorrectAnswerSubmit);
 incorrectChoiceQ9BEl.addEventListener("click", incorrectAnswerSubmit);
 
-correctChoiceQ10El.addEventListener("click", question10Ender);
-incorrectChoiceQ10El.addEventListener("click", question10Ender);
-incorrectChoiceQ10AEl.addEventListener("click", question10Ender);
-incorrectChoiceQ10BEl.addEventListener("click", question10Ender);
+correctChoiceQ10El.addEventListener("click", question10EnderCorrect);
+incorrectChoiceQ10El.addEventListener("click", question10EnderIncorrect);
+incorrectChoiceQ10AEl.addEventListener("click", question10EnderIncorrect);
+incorrectChoiceQ10BEl.addEventListener("click", question10EnderIncorrect);
 
 beginButtonEl.addEventListener("click", beginKumite);
 kickAssEl.addEventListener("click", kickMoreAss);
