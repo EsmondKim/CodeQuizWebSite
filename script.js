@@ -193,6 +193,10 @@ function getFormattedSeconds() {
     seconds.classList.add("hideSeconds");
     nextQuestionIndex.classList.remove("showQuestion");
     nextQuestionIndex.classList.add("hideQuestion");
+    wrongAnswer.classList.remove("showWrong");
+    wrongAnswer.classList.add("hideWrong");
+    correctAnswer.classList.remove("showCorrect");
+    correctAnswer.classList.add("hideCorrect");
     gameOverEl.classList.remove("hideGameOver");
     gameOverEl.classList.add("showGameOver");
     renderScore();
