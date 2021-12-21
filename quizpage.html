@@ -728,8 +728,7 @@
 
       <!-- Card for the score. -->
       <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6"></div>
-        <div class="card" style="width: 18rem">
+        <div class="col-6 card" style="width: fit-content">
           <div class="scoreCard" style="background-color: red">Your Score:</div>
           <ul class="list-group list-group-flush">
             <li
@@ -740,13 +739,14 @@
               0000000
             </li>
           </ul>
+          <div class="col-6"></div>
         </div>
       </div>
 
       <!--You got it card.-->
       <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-          <div id="correctAnswer" class="card hideCorrect" style="width: 18rem">
+        <div class="col-12">
+          <div id="correctAnswer" class="card hideCorrect" style="width: 90%">
             <img
               src="./Assets/flyingjumpkick.jpg"
               class="card-img-top"
@@ -757,10 +757,15 @@
               <p class="card-text" style="text-align: center">
                 You are dominating the fight! Keep it up!
               </p>
-              <a href="#" class="btn btn-primary continue-button" id="kickAss"
-                >Continue Kickin' JavaScript @$$!</a
-              >
-              <p>Hit this button, get a bonus five seconds to fight!</p>
+              <div class="continue-btn-alignment">
+                <a href="#" class="btn btn-primary continue-button" id="kickAss"
+                  >Continue Kickin' JavaScript @$$!</a
+                >
+              </div>
+              <br />
+              <p style="text-align: center">
+                Hit this button, get a bonus five seconds to fight!
+              </p>
             </div>
           </div>
         </div>
@@ -768,8 +773,8 @@
 
       <!--Wrong answer card.-->
       <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-          <div id="wrongAnswer" class="card hideWrong" style="width: 18rem">
+        <div class="col-12">
+          <div id="wrongAnswer" class="card hideWrong" style="width: 90%">
             <img
               src="./Assets/younextbro.jpg"
               class="card-img-top"
@@ -783,11 +788,14 @@
               </p>
               <a
                 href="#"
-                class="btn btn-primary question-button"
+                class="btn btn-primary next-question-button"
                 id="builtForThis"
                 >Next Question</a
               >
-              <p>Hit this button, lose five seconds of time!</p>
+              <br />
+              <p style="text-align: center">
+                Hit this button, lose five seconds of time!
+              </p>
             </div>
           </div>
         </div>
@@ -795,8 +803,8 @@
 
       <!--Game Over Card.-->
       <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-          <div id="gameOver" class="card hideGameOver" style="width: 18rem">
+        <div class="col-12">
+          <div id="gameOver" class="card hideGameOver" style="width: 90%">
             <img
               src="./Assets/blind.jpg"
               class="card-img-top"
@@ -807,9 +815,13 @@
               <p class="card-text" style="text-align: center">
                 Chong Li DEFEATED YOU! FATALITY!
               </p>
-              <a href="./index.html" class="btn btn-primary" id="startOver"
+              <a
+                href="./index.html"
+                class="btn btn-primary start-over-btn"
+                id="startOver"
                 >Start Quiz Over</a
               >
+              <br />
               <p>Keep fighting the JavaScript Fight!</p>
             </div>
           </div>
@@ -818,8 +830,8 @@
 
       <!--Question 10 Good Ending Card-->
       <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-          <div id="goodEnding" class="card hideGoodEnding" style="width: 18rem">
+        <div class="col-12">
+          <div id="goodEnding" class="card hideGoodEnding" style="width: 90%">
             <img
               src="./Assets/bigbuddy.jpg"
               class="card-img-top"
@@ -830,9 +842,12 @@
               <p class="card-text" style="text-align: center">
                 You survived the fight and triumphed!
               </p>
-              <a href="./index.html" class="btn btn-primary" id="startOver"
-                >Start Quiz Over</a
-              >
+              <div class="start-qz-over-btn-alignment">
+                <a href="./index.html" class="btn btn-primary" id="startOver"
+                  >Start Quiz Over</a
+                >
+              </div>
+              <br />
               <p>Try for a higher score and restart the quiz!</p>
             </div>
           </div>
@@ -841,8 +856,8 @@
 
       <!--Question 10 Bad Ending Card-->
       <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-          <div id="badEnding" class="card hideBadEnding" style="width: 18rem">
+        <div class="col-12">
+          <div id="badEnding" class="card hideBadEnding" style="width: 90%">
             <img
               src="./Assets/ChongLiFlair.jpg"
               class="card-img-top"
@@ -854,9 +869,13 @@
                 Chong Li beat you up then gave you a swirly! Harsh mellow dude.
                 Try again.
               </p>
-              <a href="./index.html" class="btn btn-primary" id="startOver"
-                >Start Quiz Over</a
-              >
+              <br />
+              <div class="start-quiz-over-bad-alignment">
+                <a href="./index.html" class="btn btn-primary" id="startOver"
+                  >Start Quiz Over</a
+                >
+              </div>
+              <br />
               <p>Are you brave enough to fight again?</p>
             </div>
           </div>

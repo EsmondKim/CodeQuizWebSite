@@ -30,6 +30,31 @@
   width: fit-content;
 }
 
+.continue-btn-alignment {
+  display: flex;
+  justify-content: center;
+}
+
+.next-question-button {
+  display: flex;
+  justify-content: center;
+}
+
+.start-over-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.start-qz-over-btn-alignment {
+  display: flex;
+  justify-content: center;
+}
+
+.start-quiz-over-bad-alignment {
+  display: flex;
+  justify-content: center;
+}
+
 .chong-li-image-4 {
   max-width: 350px;
 }
