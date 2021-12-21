@@ -1,59 +1,88 @@
+.JeanClaude-hero {
+  justify-content: center;
+}
+
+.index-hyperlink {
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.index-h1 {
+  color: red;
+  text-align: center;
+}
+
+.index-h2 {
+  color: red;
+  text-align: center;
+}
+
+.question-button {
+  width: 90%;
+  text-overflow: wrap;
+}
+
+.continue-button {
+  width: fit-content;
+}
+
 .hideButton {
-    display: none;
+  display: none;
 }
 
 .hideQuestion {
-    display: none;
+  display: none;
 }
 
 .showQuestion {
-    display: visible;
+  display: visible;
 }
 
 .hideCorrect {
-    display: none;
+  display: none;
 }
 
 .showCorrect {
-    display: visible;
+  display: visible;
 }
 
 .hideWrong {
-    display: none;
+  display: none;
 }
 
 .showWrong {
-    display: visible;
+  display: visible;
 }
 
 .hideGameOver {
-    display: none;
+  display: none;
 }
 
 .showGameOver {
-    display: visible;
+  display: visible;
 }
 
 .hideGoodEnding {
-    display: none;
+  display: none;
 }
 
 .showGoodEnding {
-    display: visible;
+  display: visible;
 }
 
 .hideBadEnding {
-    display: none;
+  display: none;
 }
 
 .showBadEnding {
-    display: visible;
+  display: visible;
 }
 
 .hideMinutes {
-    display: none;
+  display: none;
 }
 
 .hideSeconds {
-    display: none;
+  display: none;
 }

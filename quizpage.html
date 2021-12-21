@@ -13,72 +13,157 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>BrutalCodingQuiz</title>
-</head>
+  </head>
 
-<body style="background-color:#F5F5F5;">
-  <div class="row ">
-    <nav class="col-xl-12 col-md-12 col-xs-12">
-      <ul class="nav justify-content-left bg-warning">
-        <li class="nav-item"></li>  
-        <a class="nav-link active text-primary" href="./highscores.html" style="font-family: Verdana, Arial, 'Lucida Console'">Last Fighter's Score</a>
-        <li class="nav item" style="color: red; text-align: right; font-size: 25px; font-weight: bold; font-family: Verdana, Arial, 'Lucida Console';">Timer: </li>  
-        <li id="minutes" class="nav item" style="color: red; text-align: right; font-size: 25px; font-weight: bold; font-family: Verdana, Arial, 'Lucida Console';">2</li>  
-        <li id="seconds" class="nav item" style="color: red; text-align: right; font-size: 25px; font-weight: bold; font-family: Verdana, Arial, 'Lucida Console';">:00</li>
-      </ul>
-    </nav>
-  </div>
-
-<div class="container">
-
-<div class="row">
-  <div class="col-xl-12 col-md-6 col-xs-6">
-  <br>
-  <p> </p>
-  <br>
-  </div> 
-  </div>
-
-<!--Begin button.-->
-<div class="row">
-<div class="col-xl-12 col-md-6 col-xs-6">
-<button id="beginButton" type="button" class="btn btn-danger">BEGIN the Kumite</button>  
-  </div>
-</div>
-
-<!--Question 1.-->
-<div class="row">
-<div class="col-xl-6 col-md-6 col-xs-6">
-  <div class="hideQuestion" style="width: 18rem;" id="question1">
-  <img src="./Assets/fightstance.jpg" class="card-img-top" alt="Frank Dux, ready for a fight.">
-  <div class="card-body">
-    <h5 class="card-title">JavaScript Question 1</h5>
+  <body style="background-color: #f5f5f5">
     <div class="row">
-    <div class="col-xl-12 col-md-6 col-xs-6">
-    <p>What is the difference between let and var?</p>
-      <a href="#" class="btn btn-primary" id="incorrectChoiceQ1">A: <p>Let defines variables on a global scope, while var defines variables on a local scope.</p></a>
-        <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-        <br>
+      <nav class="col-12">
+        <ul class="nav justify-content-left bg-warning">
+          <li class="nav-item"></li>
+          <a
+            class="nav-link active text-primary"
+            href="./highscores.html"
+            style="font-family: Verdana, Arial, 'Lucida Console'"
+            >High Scores</a
+          >
+          <li
+            class="nav item"
+            style="
+              color: red;
+              text-align: right;
+              font-size: 25px;
+              font-weight: bold;
+              font-family: Verdana, Arial, 'Lucida Console';
+            "
+          >
+            Timer:
+          </li>
+          <li
+            id="minutes"
+            class="nav item"
+            style="
+              color: red;
+              text-align: right;
+              font-size: 25px;
+              font-weight: bold;
+              font-family: Verdana, Arial, 'Lucida Console';
+            "
+          >
+            2
+          </li>
+          <li
+            id="seconds"
+            class="nav item"
+            style="
+              color: red;
+              text-align: right;
+              font-size: 25px;
+              font-weight: bold;
+              font-family: Verdana, Arial, 'Lucida Console';
+            "
+          >
+            :00
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <br />
+          <p></p>
+          <br />
         </div>
-        </div>
-      <a href="#" class="btn btn-primary" id="incorrectChoiceQ1A">B: <p>Let does the same exact thing as var, and there is no difference, at all, between the two.</p></a>
-        <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-        <br>
-        </div>
-        </div>  
-      <a href="#" class="btn btn-primary" id="correctChoiceQ1">C: <p>Let defines variables on the local scope, while var defines variables on a global scope.</p></a>
-        <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-        <br>
       </div>
+
+      <!--Begin button.-->
+      <div class="row">
+        <div class="col-12">
+          <button id="beginButton" type="button" class="btn btn-danger">
+            BEGIN the Kumite
+          </button>
+        </div>
       </div>
-      <a href="#" class="btn btn-primary" id="incorrectChoiceQ1B">D: <p>Frank Dux preferred let, and he suddenly appears to punch web developers that use var. </p></a>
+
+      <!--Question 1.-->
+      <div class="row">
+        <div class="col-12">
+          <div class="hideQuestion" style="width: 70%" id="question1">
+            <img
+              src="./Assets/fightstance.jpg"
+              class="card-img-top"
+              alt="Frank Dux, ready for a fight."
+            />
+            <div class="card-body">
+              <h5 class="card-title">JavaScript Question 1</h5>
+              <div class="row">
+                <div class="col-12">
+                  <p>What is the difference between let and var?</p>
+                  <a
+                    href="#"
+                    class="btn btn-primary question-button"
+                    id="incorrectChoiceQ1"
+                    >A:
+                    <p>
+                      Let defines variables on a global scope, while var defines
+                      variables on a local scope.
+                    </p></a
+                  >
+                  <div class="row">
+                    <div class="col-12">
+                      <br />
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="btn btn-primary question-button"
+                    id="incorrectChoiceQ1A"
+                    >B:
+                    <p>
+                      Let does the same exact thing as var, and there is no
+                      difference, at all, between the two.
+                    </p></a
+                  >
+                  <div class="row">
+                    <div class="col-12">
+                      <br />
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="btn btn-primary question-button"
+                    id="correctChoiceQ1"
+                    >C:
+                    <p>
+                      Let defines variables on the local scope, while var
+                      defines variables on a global scope.
+                    </p></a
+                  >
+                  <div class="row">
+                    <div class="col-12">
+                      <br />
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="btn btn-primary question-button"
+                    id="incorrectChoiceQ1B"
+                    >D:
+                    <p>
+                      Frank Dux preferred let, and he suddenly appears to punch
+                      web developers that use var.
+                    </p></a
+                  >
                 </div>
               </div>
             </div>
@@ -86,328 +171,656 @@
         </div>
       </div>
 
-    <!--Question 2.-->
-    <div class="hideQuestion" style="width: 18rem;" id="question2">
-    <img src="./Assets/bigkick.jpg" class="card-img-top" alt="Frank Dux doing a fierce high leg kick.">
-    <div class="card-body">
-      <h5 class="card-title">JavaScript Question 2</h5>
-      <p class="card-text">What is this character { called?</p>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ2">A: <p>The squigly lines.</p></a>
-        <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-        <br>
-        </div>
-        </div>
-      <a href="#" class="btn btn-primary" id="correctChoiceQ2">B: <p>Curly brackets.</p></a>
-        <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-        <br>
-        </div>
-        </div>  
-      <a href="#" class="btn btn-primary" id="incorrectChoiceQ2A">C: <p>Curly parenthesis.</p></a>
-        <div class="row">
-        <div class="col-xl-12 col-md-6 col-xs-6">
-        <br>
-      </div>
-      </div>
-      <a href="#" class="btn btn-primary" id="incorrectChoiceQ2B">D: <p>Curly teeth. </p></a>
-        </div>
-      </div>
-            
-    <!--Question 3.-->
-    <div class="hideQuestion" style="width: 18rem;" id="question3">
-      <img src="./Assets/watercolor.jpg" class="card-img-top" alt="An impressionistic rendition of Frank Dux.">
-      <div class="card-body">
-        <h5 class="card-title">JavaScript Question 3</h5>
-        <p class="card-text">True or False: the # selector anchors on to a "class" HTML element?</p>
-          <a href="#" class="btn btn-primary" id="incorrectChoiceQ3">A: <p>True</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>
-        <a href="#" class="btn btn-primary" id="correctChoiceQ3">B: <p>False</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-            </div>
-          </div> 
-        </div>
-      </div>
-    <!--Question 4.-->
-    <div class="hideQuestion" style="width: 18rem;" id="question4">
-      <img src="./Assets/ChongLi.jpg" class="card-img-top" alt="Chong Li intimidating you.">
-      <div class="card-body">
-        <h5 class="card-title">JavaScript Question 4</h5>
-        <p class="card-text">True or False: The following JavaScript statement will return the value "true": console.log("1" === 1)?</p>
-          <a href="#" class="btn btn-primary" id="incorrectChoiceQ4">A: <p>True</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>
-        <a href="#" class="btn btn-primary" id="correctChoiceQ4">B: <p>False</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
+      <!--Question 2.-->
+      <div class="row">
+        <div class="col-12">
+          <div class="hideQuestion" style="width: 70%" id="question2">
+            <img
+              src="./Assets/bigkick.jpg"
+              class="card-img-top"
+              alt="Frank Dux doing a fierce high leg kick."
+            />
+            <div class="card-body">
+              <h5 class="card-title">JavaScript Question 2</h5>
+              <div class="row">
+                <div class="col-12">
+                  <p class="card-text">What is this character { called?</p>
+                  <a
+                    href="#"
+                    class="btn btn-primary question-button"
+                    id="incorrectChoiceQ2"
+                    >A:
+                    <p>The squigly lines.</p></a
+                  >
+                  <div class="row">
+                    <div class="col-12">
+                      <br />
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="btn btn-primary question-button"
+                    id="correctChoiceQ2"
+                    >B:
+                    <p>Curly brackets or curly braces.</p></a
+                  >
+                  <div class="row">
+                    <div class="col-12">
+                      <br />
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="btn btn-primary question-button"
+                    id="incorrectChoiceQ2A"
+                    >C:
+                    <p>Curly parenthesis.</p></a
+                  >
+                  <div class="row">
+                    <div class="col-12">
+                      <br />
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="btn btn-primary question-button"
+                    id="incorrectChoiceQ2B"
+                    >D:
+                    <p>Curly teeth.</p></a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    <!--Question 5.-->
-    <div class="hideQuestion" style="width: 18rem;" id="question5">
-      <img src="./Assets/gutpunch.jpg" class="card-img-top" alt="Frank Dux striking his opponent first.">
-      <div class="card-body">
-        <h5 class="card-title">JavaScript Question 5</h5>
-        <p class="card-text">Index position 5 in the following array would return what letter? [A, B, C, D, E, F, G, H]</p>
-          <a href="#" class="btn btn-primary" id="incorrectChoiceQ5">A: <p>C</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ5A">B: <p>A</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>  
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ5B">C: <p>G</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-        </div>
-        </div>
-        <a href="#" class="btn btn-primary" id="correctChoiceQ5">D: <p>F</p></a>
-          </div>
-        </div>
-    <!--Question 6.-->
-    <div class="hideQuestion" style="width: 18rem;" id="question6">
-      <img src="./Assets/ready.jpg" class="card-img-top" alt="Bloodsport movie poster.">
-      <div class="card-body">
-        <h5 class="card-title">JavaScript Question 6</h5>
-        <p class="card-text">Select the correct example of camel case.</p>
-          <a href="#" class="btn btn-primary" id="incorrectChoiceQ6">A: <p>firstvariable</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>
-        <a href="#" class="btn btn-primary" id="correctChoiceQ6">B: <p>secondVariable</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>  
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ6A">C: <p>ThirdVariable</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-        </div>
-        </div>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ6B">D: <p>fOuRtHvArIaBlE</p></a>
-          </div>
-        </div>
-    <!--Question 7.-->
-    <div class="hideQuestion" style="width: 18rem;" id="question7">
-      <img src="./Assets/balanced.jpg" class="card-img-top" alt="A balanced Frank Dux.">
-      <div class="card-body">
-        <h5 class="card-title">JavaScript Question 7</h5>
-        <p class="card-text">Math.floor(8.39197) will return what?</p>
-          <a href="#" class="btn btn-primary" id="correctChoiceQ7">A: <p>8</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ7">B: <p>8.3</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>  
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ7A">C: <p>9</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-        </div>
-        </div>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ7B">D: <p>8.5</p></a>
-          </div>
-        </div>
-    <!--Question 8.-->
-    <div class="hideQuestion" style="width: 18rem;" id="question8">
-      <img src="./Assets/frankdux.jpg" class="card-img-top" alt="Frank Dux in the heat of battle.">
-      <div class="card-body">
-        <h5 class="card-title">JavaScript Question 8</h5>
-        <p class="card-text">The parameters passed into a function are correctly referred to as:</p>
-          <a href="#" class="btn btn-primary" id="incorrectChoiceQ8">A: <p>Quarrels</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>
-        <a href="#" class="btn btn-primary" id="correctChoiceQ8">B: <p>Arguments</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>  
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ8A">C: <p>Theories</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-        </div>
-        </div>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ8B">D: <p>Variables</p></a>
-          </div>
-        </div>
-    <!--Question 9.-->
-    <div class="hideQuestion" style="width: 18rem;" id="question9">
-      <img src="./Assets/you.jpg" class="card-img-top" alt="Chong Li pointing at your face, aggressively.">
-      <div class="card-body">
-        <h5 class="card-title">JavaScript Question 9</h5>
-        <p class="card-text">The pop() method applied to this array will return what? sampleArray["Scorpion", "SubZero", "Sonya", "Johnny Cage"]</p>
-          <a href="#" class="btn btn-primary" id="correctChoiceQ9">A: <p>"Johnny Cage"</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ9">B: <p>"SubZero"</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>  
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ9A">C: <p>"Sonya"</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-        </div>
-        </div>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ9B">D: <p>"Scorpion"</p></a>
-          </div>
-        </div>
-    <!--Question 10.-->
-    <div class="hideQuestion" style="width: 18rem;" id="question10">
-      <img src="./Assets/Forest-Whitaker.jpg" class="card-img-top" alt="Actor Forest Whitaker talking to Frank Dux.">
-      <div class="card-body">
-        <h5 class="card-title">JavaScript Question 10</h5>
-        <p class="card-text">Actor Forest Whitaker portrays the character Rawlins, trying to apprehend Jean Claude Van Damme's character in Blood Sport.  For which movie did Forest Whitaker win an Oscar?</p>
-          <a href="#" class="btn btn-primary" id="incorrectChoiceQ10">A: <p>The Butler</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ10A">B: <p>The Color of Money</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-          </div>
-          </div>  
-        <a href="#" class="btn btn-primary" id="correctChoiceQ10">C: <p>The Last King of Scotland</p></a>
-          <div class="row">
-          <div class="col-xl-12 col-md-6 col-xs-6">
-          <br>
-        </div>
-        </div>
-        <a href="#" class="btn btn-primary" id="incorrectChoiceQ10B">D: <p>The Crying Game</p></a>
-          </div>
-        </div>
 
-    <!-- Card for the score. -->
-    <div class="row">
-    <div class="col-xl-12 col-md-6 col-xs-6"></div>
-    <div class="card" style="width: 18rem;">
-      <div class="scoreCard" style="background-color: red">
-        Your Score:
+      <!--Question 3.-->
+      <div class="row">
+        <div class="col-12">
+          <div class="hideQuestion" style="width: 70%" id="question3">
+            <img
+              src="./Assets/watercolor.jpg"
+              class="card-img-top"
+              alt="An impressionistic rendition of Frank Dux."
+            />
+            <div class="card-body">
+              <h5 class="card-title">JavaScript Question 3</h5>
+              <p class="card-text">
+                True or False: the # selector anchors on to a "class" HTML
+                element?
+              </p>
+              <a
+                href="#"
+                class="btn btn-primary question-button"
+                id="incorrectChoiceQ3"
+                >A:
+                <p>True</p></a
+              >
+              <div class="row">
+                <div class="col-12">
+                  <br />
+                </div>
+              </div>
+              <a
+                href="#"
+                class="btn btn-primary question-button"
+                id="correctChoiceQ3"
+                >B:
+                <p>False</p></a
+              >
+              <div class="row">
+                <div class="col-12">
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" style="color: red; font-size: 25px; font-weight: bold" id="playerScore">0000000</li>
-      </ul>
+
+      <!--Question 4.-->
+      <div class="row">
+        <div class="col-12">
+      <div class="hideQuestion" style="width: 70%" id="question4">
+        <img
+          src="./Assets/ChongLi.jpg"
+          class="card-img-top"
+          alt="Chong Li intimidating you."
+        />
+        <div class="card-body">
+          <h5 class="card-title">JavaScript Question 4</h5>
+          <div class="row">
+            <div class="col-12">
+          <p class="card-text">
+            True or False: The following JavaScript statement will return the
+            value "true": console.log("1" === 1)?
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ4"
+            >A:
+            <p>True</p></a
+          >
+          <div class="row">
+            <div class="col-12">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="correctChoiceQ4"
+            >B:
+            <p>False</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+      <!--Question 5.-->
+      <div class="row">
+        <div class="col-12">
+      <div class="hideQuestion" style="width: 70%" id="question5">
+        <img
+          src="./Assets/gutpunch.jpg"
+          class="card-img-top"
+          alt="Frank Dux striking his opponent first."
+        />
+        <div class="card-body">
+          <h5 class="card-title">JavaScript Question 5</h5>
+          <div class="row">
+            <div class="col-12">
+          <p class="card-text">
+            Index position 5 in the following array would return what letter?
+            [A, B, C, D, E, F, G, H]
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ5"
+            >A:
+            <p>C</p></a
+          >
+          <div class="row">
+            <div class="col-12">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ5A"
+            >B:
+            <p>A</p></a
+          >
+          <div class="row">
+            <div class="col-12">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ5B"
+            >C:
+            <p>G</p></a
+          >
+          <div class="row">
+            <div class="col-12">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="correctChoiceQ5"
+            >D:
+            <p>F</p></a
+          >
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!--Question 6.-->
+      <div class="row">
+        <div class="col-12">
+      <div class="hideQuestion" style="width: 70%" id="question6">
+        <img
+          src="./Assets/ready.jpg"
+          class="card-img-top"
+          alt="Bloodsport movie poster."
+        />
+        <div class="card-body">
+          <h5 class="card-title">JavaScript Question 6</h5>
+          <div class="row">
+            <div class="col-12">
+          <p class="card-text">Select the correct example of camel case.</p>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ6"
+            >A:
+            <p>firstvariable</p></a
+          >
+          <div class="row">
+            <div class="col-12">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="correctChoiceQ6"
+            >B:
+            <p>secondVariable</p></a
+          >
+          <div class="row">
+            <div class="col-12">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ6A"
+            >C:
+            <p>ThirdVariable</p></a
+          >
+          <div class="row">
+            <div class="col-12">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ6B"
+            >D:
+            <p>fOuRtHvArIaBlE</p></a
+          >
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!--Question 7.-->
+      <div class="hideQuestion" style="width: 18rem" id="question7">
+        <img
+          src="./Assets/balanced.jpg"
+          class="card-img-top"
+          alt="A balanced Frank Dux."
+        />
+        <div class="card-body">
+          <h5 class="card-title">JavaScript Question 7</h5>
+          <p class="card-text">Math.floor(8.39197) will return what?</p>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="correctChoiceQ7"
+            >A:
+            <p>8</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ7"
+            >B:
+            <p>8.3</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ7A"
+            >C:
+            <p>9</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ7B"
+            >D:
+            <p>8.5</p></a
+          >
+        </div>
+      </div>
+      <!--Question 8.-->
+      <div class="hideQuestion" style="width: 18rem" id="question8">
+        <img
+          src="./Assets/frankdux.jpg"
+          class="card-img-top"
+          alt="Frank Dux in the heat of battle."
+        />
+        <div class="card-body">
+          <h5 class="card-title">JavaScript Question 8</h5>
+          <p class="card-text">
+            The parameters passed into a function are correctly referred to as:
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ8"
+            >A:
+            <p>Quarrels</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="correctChoiceQ8"
+            >B:
+            <p>Arguments</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ8A"
+            >C:
+            <p>Theories</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ8B"
+            >D:
+            <p>Variables</p></a
+          >
+        </div>
+      </div>
+      <!--Question 9.-->
+      <div class="hideQuestion" style="width: 18rem" id="question9">
+        <img
+          src="./Assets/you.jpg"
+          class="card-img-top"
+          alt="Chong Li pointing at your face, aggressively."
+        />
+        <div class="card-body">
+          <h5 class="card-title">JavaScript Question 9</h5>
+          <p class="card-text">
+            The pop() method applied to this array will return what?
+            sampleArray["Scorpion", "SubZero", "Sonya", "Johnny Cage"]
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="correctChoiceQ9"
+            >A:
+            <p>"Johnny Cage"</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ9"
+            >B:
+            <p>"SubZero"</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ9A"
+            >C:
+            <p>"Sonya"</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ9B"
+            >D:
+            <p>"Scorpion"</p></a
+          >
+        </div>
+      </div>
+      <!--Question 10.-->
+      <div class="hideQuestion" style="width: 18rem" id="question10">
+        <img
+          src="./Assets/Forest-Whitaker.jpg"
+          class="card-img-top"
+          alt="Actor Forest Whitaker talking to Frank Dux."
+        />
+        <div class="card-body">
+          <h5 class="card-title">JavaScript Question 10</h5>
+          <p class="card-text">
+            Actor Forest Whitaker portrays the character Rawlins, trying to
+            apprehend Jean Claude Van Damme's character in Blood Sport. For
+            which movie did Forest Whitaker win an Oscar?
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ10"
+            >A:
+            <p>The Butler</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ10A"
+            >B:
+            <p>The Color of Money</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="correctChoiceQ10"
+            >C:
+            <p>The Last King of Scotland</p></a
+          >
+          <div class="row">
+            <div class="col-xl-12 col-md-6 col-xs-6">
+              <br />
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary question-button"
+            id="incorrectChoiceQ10B"
+            >D:
+            <p>The Crying Game</p></a
+          >
+        </div>
+      </div>
+
+      <!-- Card for the score. -->
+      <div class="row">
+        <div class="col-xl-12 col-md-6 col-xs-6"></div>
+        <div class="card" style="width: 18rem">
+          <div class="scoreCard" style="background-color: red">Your Score:</div>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              style="color: red; font-size: 25px; font-weight: bold"
+              id="playerScore"
+            >
+              0000000
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--You got it card.-->
+      <div class="row">
+        <div class="col-xl-12 col-md-6 col-xs-6">
+          <div id="correctAnswer" class="card hideCorrect" style="width: 18rem">
+            <img
+              src="./Assets/flyingjumpkick.jpg"
+              class="card-img-top"
+              alt="Frank Dux flying high!"
+            />
+            <div class="card-body">
+              <h5 class="card-title">CORRECT!</h5>
+              <p class="card-text" style="text-align: center">
+                You are dominating the fight! Keep it up!
+              </p>
+              <a href="#" class="btn btn-primary continue-button" id="kickAss"
+                >Continue Kickin' JavaScript @$$!</a
+              >
+              <p>Hit this button, get a bonus five seconds to fight!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Wrong answer card.-->
+      <div class="row">
+        <div class="col-xl-12 col-md-6 col-xs-6">
+          <div id="wrongAnswer" class="card hideWrong" style="width: 18rem">
+            <img
+              src="./Assets/younextbro.jpg"
+              class="card-img-top"
+              alt="Menacing Chong Lee."
+            />
+            <div class="card-body">
+              <h5 class="card-title">WRONG!</h5>
+              <p class="card-text" style="text-align: center">
+                Chong Li is pounding on you! Are you really built for this? Get
+                back in the JavaScript FIGHT!
+              </p>
+              <a
+                href="#"
+                class="btn btn-primary question-button"
+                id="builtForThis"
+                >Next Question</a
+              >
+              <p>Hit this button, lose five seconds of time!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Game Over Card.-->
+      <div class="row">
+        <div class="col-xl-12 col-md-6 col-xs-6">
+          <div id="gameOver" class="card hideGameOver" style="width: 18rem">
+            <img
+              src="./Assets/blind.jpg"
+              class="card-img-top"
+              alt="Frank Dux is blind and over."
+            />
+            <div class="card-body">
+              <h5 class="card-title">GAME Over</h5>
+              <p class="card-text" style="text-align: center">
+                Chong Li DEFEATED YOU! FATALITY!
+              </p>
+              <a href="./index.html" class="btn btn-primary" id="startOver"
+                >Start Quiz Over</a
+              >
+              <p>Keep fighting the JavaScript Fight!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Question 10 Good Ending Card-->
+      <div class="row">
+        <div class="col-xl-12 col-md-6 col-xs-6">
+          <div id="goodEnding" class="card hideGoodEnding" style="width: 18rem">
+            <img
+              src="./Assets/bigbuddy.jpg"
+              class="card-img-top"
+              alt="Your righteous bro Jackson is so proud of you!"
+            />
+            <div class="card-body">
+              <h5 class="card-title">You are a KUMITE CHAMPION!</h5>
+              <p class="card-text" style="text-align: center">
+                You survived the fight and triumphed!
+              </p>
+              <a href="./index.html" class="btn btn-primary" id="startOver"
+                >Start Quiz Over</a
+              >
+              <p>Try for a higher score and restart the quiz!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Question 10 Bad Ending Card-->
+      <div class="row">
+        <div class="col-xl-12 col-md-6 col-xs-6">
+          <div id="badEnding" class="card hideBadEnding" style="width: 18rem">
+            <img
+              src="./Assets/ChongLiFlair.jpg"
+              class="card-img-top"
+              alt="Chong Li celebrating victory."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Bad Ending Bruh</h5>
+              <p class="card-text" style="text-align: center">
+                Chong Li beat you up then gave you a swirly! Harsh mellow dude.
+                Try again.
+              </p>
+              <a href="./index.html" class="btn btn-primary" id="startOver"
+                >Start Quiz Over</a
+              >
+              <p>Are you brave enough to fight again?</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-    <!--You got it card.-->
-    <div class="row">
-      <div class="col-xl-12 col-md-6 col-xs-6">
-      <div id="correctAnswer" class="card hideCorrect" style="width: 18rem;">
-        <img src="./Assets/flyingjumpkick.jpg" class="card-img-top" alt="Frank Dux flying high!">
-        <div class="card-body">
-          <h5 class="card-title">CORRECT!</h5>
-          <p class="card-text" style="text-align: center">You are dominating the fight! Keep it up!</p>
-          <a href="#" class="btn btn-primary" id="kickAss">Continue Kickin' JavaScript @$$!</a>
-          <p>Hit this button, get a bonus five seconds to fight!</p>
-          </div>
-        </div>
-      </div>
-     </div>
-
-    <!--Wrong answer card.-->
-    <div class="row">
-      <div class="col-xl-12 col-md-6 col-xs-6">
-      <div id="wrongAnswer" class="card hideWrong" style="width: 18rem;">
-        <img src="./Assets/younextbro.jpg" class="card-img-top" alt="Menacing Chong Lee.">
-        <div class="card-body">
-          <h5 class="card-title">WRONG!</h5>
-          <p class="card-text" style="text-align: center">Chong Li is pounding on you!  Are you really built for this? Get back in the JavaScript FIGHT!</p>
-          <a href="#" class="btn btn-primary" id="builtForThis">Next Question</a>
-          <p>Hit this button, lose five seconds of time!</p>
-              </div>
-           </div>
-        </div>
-     </div>
-
-     <!--Game Over Card.-->
-     <div class="row">
-      <div class="col-xl-12 col-md-6 col-xs-6">
-      <div id="gameOver" class="card hideGameOver" style="width: 18rem;">
-        <img src="./Assets/blind.jpg" class="card-img-top" alt="Frank Dux is blind and over.">
-        <div class="card-body">
-          <h5 class="card-title">GAME Over</h5>
-          <p class="card-text" style="text-align: center">Chong Li DEFEATED YOU! FATALITY!</p>
-          <a href="./index.html" class="btn btn-primary" id="startOver">Start Quiz Over</a>
-          <p>Keep fighting the JavaScript Fight!</p>
-              </div>
-           </div>
-        </div>
-     </div>
-
-     <!--Question 10 Good Ending Card-->
-     <div class="row">
-      <div class="col-xl-12 col-md-6 col-xs-6">
-      <div id="goodEnding" class="card hideGoodEnding" style="width: 18rem;">
-        <img src="./Assets/bigbuddy.jpg" class="card-img-top" alt="Your righteous bro Jackson is so proud of you!">
-        <div class="card-body">
-          <h5 class="card-title">You are a KUMITE CHAMPION!</h5>
-          <p class="card-text" style="text-align: center">You survived the fight and triumphed!</p>
-          <a href="./index.html" class="btn btn-primary" id="startOver">Start Quiz Over</a>
-          <p>Try for a higher score and restart the quiz!</p>
-              </div>
-           </div>
-        </div>
-     </div>
-
-     <!--Question 10 Bad Ending Card-->
-     <div class="row">
-      <div class="col-xl-12 col-md-6 col-xs-6">
-      <div id="badEnding" class="card hideBadEnding" style="width: 18rem;">
-        <img src="./Assets/ChongLiFlair.jpg" class="card-img-top" alt="Chong Li celebrating victory.">
-        <div class="card-body">
-          <h5 class="card-title">Bad Ending Bruh</h5>
-          <p class="card-text" style="text-align: center">Chong Li beat you up then gave you a swirly!  Harsh mellow dude.  Try again.</p>
-          <a href="./index.html" class="btn btn-primary" id="startOver">Start Quiz Over</a>
-          <p>Are you brave enough to fight again?</p>
-              </div>
-           </div>
-        </div>
-     </div>
-
-</div>
-<link rel="stylesheet" href="./style.css">
-<script src="./script.js"></script>
-
-</body>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </body>
 </html>
