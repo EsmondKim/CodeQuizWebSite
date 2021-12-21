@@ -64,7 +64,18 @@ let minutesEl = document.querySelector("#minutes");
 let secondsEl = document.querySelector("#seconds");
 
 //Creating an array to use in next question function.
-let nextQuestion = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10];
+let nextQuestion = [
+  question1,
+  question2,
+  question3,
+  question4,
+  question5,
+  question6,
+  question7,
+  question8,
+  question9,
+  question10,
+];
 let nextQuestionOperate = 0;
 let nextQuestionIndex;
 //Setting the initial time to start the game.
@@ -74,179 +85,182 @@ let playerScoreEl = document.querySelector("#playerScore");
 let playerScoreCount = 0;
 
 function beginKumite() {
-    console.log("beginKumite");
-    console.log(nextQuestionOperate);
-    nextQuestionIndex = nextQuestion[nextQuestionOperate];
-    console.log(nextQuestionIndex);
-    nextQuestionIndex.classList.remove("hideQuestion");
-    nextQuestionIndex.classList.add("showQuestion");
-    beginButton.classList.add("hideButton");
-    startTimer();
+  console.log("beginKumite");
+  console.log(nextQuestionOperate);
+  nextQuestionIndex = nextQuestion[nextQuestionOperate];
+  console.log(nextQuestionIndex);
+  nextQuestionIndex.classList.remove("hideQuestion");
+  nextQuestionIndex.classList.add("showQuestion");
+  beginButton.classList.add("hideButton");
+  startTimer();
 }
 //Start the clock function.
-function startTimer() { 
-    interval = setInterval(function() {
+function startTimer() {
+  interval = setInterval(function () {
     totalSeconds--;
     //set to -1 so clock shows 0:00 at end of game
     if (totalSeconds === -1) {
-        gameOverFunc();
-        clearInterval(interval);    
-     }
-     renderTime();
-    }, 1000);
-}   
- 
+      gameOverFunc();
+      clearInterval(interval);
+    }
+    renderTime();
+  }, 1000);
+}
+
 function stopTheTimer() {
-    clearInterval (interval);
+  clearInterval(interval);
 }
 
 function renderTime() {
-minutesDisplay.textContent = getFormattedMinutes();
-secondsDisplay.textContent = getFormattedSeconds();
+  minutesDisplay.textContent = getFormattedMinutes();
+  secondsDisplay.textContent = getFormattedSeconds();
 }
 
 function getFormattedMinutes() {
-    let minutesLeft = Math.floor(totalSeconds / 60);
-    if (minutesLeft < 1) {
-        formattedMinutes = "0";
-    }
-    else {
-        formattedMinutes = minutesLeft;
-    }
-    return formattedMinutes;
+  let minutesLeft = Math.floor(totalSeconds / 60);
+  if (minutesLeft < 1) {
+    formattedMinutes = "0";
+  } else {
+    formattedMinutes = minutesLeft;
+  }
+  return formattedMinutes;
 }
 //Need to format seconds for single digits above 2:00 min. (Accounting for bonus seconds)
 function getFormattedSeconds() {
-    secondsLeft = ":" + (totalSeconds) % 60;
-    let formattedSeconds = secondsLeft
+  secondsLeft = ":" + (totalSeconds % 60);
+  let formattedSeconds = secondsLeft;
 
-    if (totalSeconds > 119 && totalSeconds < 130) {
-        formattedSeconds = ":0" + (totalSeconds) % 60;
-    }
+  if (totalSeconds > 119 && totalSeconds < 130) {
+    formattedSeconds = ":0" + (totalSeconds % 60);
+  }
 
-    if (totalSeconds < 70 && totalSeconds > 59) {
-        formattedSeconds = ":0" + (totalSeconds) % 60;
-    }
-    
-    if (totalSeconds < 10) {
-        formattedSeconds = ":0" + (totalSeconds) % 60;
-    } 
-    return formattedSeconds;
+  if (totalSeconds < 70 && totalSeconds > 59) {
+    formattedSeconds = ":0" + (totalSeconds % 60);
+  }
+
+  if (totalSeconds < 10) {
+    formattedSeconds = ":0" + (totalSeconds % 60);
+  }
+  return formattedSeconds;
 }
 
 //Correct answer function, add time to the clock if correct, deduct if incorrect.
 //Show next question function.
 //Here, consider an array with question1-10, and i increments each time a right or wrong answer screem is clicked.
-    function correctAnswerSubmit() {   
-        console.log("Correct Answer Submit")
-        nextQuestionIndex.classList.remove("showQuestion");
-        nextQuestionIndex.classList.add("hideQuestion");
-        correctAnswer.classList.remove("hideCorrect");
-        correctAnswer.classList.add("showCorrect");
-    } 
-    
-    function incorrectAnswerSubmit() {
-        console.log("Incorrect answer submit.")
-        nextQuestionIndex.classList.remove("showQuestion");
-        nextQuestionIndex.classList.add("hideQuestion");
-        wrongAnswer.classList.remove("hideWrong");
-        wrongAnswer.classList.add("showWrong");
-    }
+function correctAnswerSubmit() {
+  console.log("Correct Answer Submit");
+  nextQuestionIndex.classList.remove("showQuestion");
+  nextQuestionIndex.classList.add("hideQuestion");
+  correctAnswer.classList.remove("hideCorrect");
+  correctAnswer.classList.add("showCorrect");
+}
 
-    function kickMoreAss() {
-        nextQuestionOperate++;
-        console.log(nextQuestionOperate);
-        nextQuestionIndex = nextQuestion[nextQuestionOperate];
-        console.log(nextQuestionIndex);
-        nextQuestionIndex.classList.remove("hideQuestion");
-        nextQuestionIndex.classList.add("showQuestion");
-        correctAnswer.classList.remove("showCorrect");
-        correctAnswer.classList.add("hideCorrect");
-        totalSeconds = totalSeconds + 5;
-        playerScoreCount = playerScoreCount + 100000;
-        renderScore();     
-    }
+function incorrectAnswerSubmit() {
+  console.log("Incorrect answer submit.");
+  nextQuestionIndex.classList.remove("showQuestion");
+  nextQuestionIndex.classList.add("hideQuestion");
+  wrongAnswer.classList.remove("hideWrong");
+  wrongAnswer.classList.add("showWrong");
+}
 
-    function moreBuiltForThis() {
-        nextQuestionOperate++;
-        console.log(nextQuestionOperate);
-        nextQuestionIndex = nextQuestion[nextQuestionOperate];
-        console.log(nextQuestionIndex);
-        nextQuestionIndex.classList.remove("hideQuestion");
-        nextQuestionIndex.classList.add("showQuestion");
-        wrongAnswer.classList.remove("showWrong");
-        wrongAnswer.classList.add("hideWrong");  
-        totalSeconds = totalSeconds - 5;
-        playerScoreCount = playerScoreCount - 50000;
-        renderScore();   
-    }
-    
-    function renderScore(){
-        playerScoreEl.textContent = playerScoreCount;
-        console.log(playerScoreCount);
-    }
+function kickMoreAss() {
+  nextQuestionOperate++;
+  console.log(nextQuestionOperate);
+  nextQuestionIndex = nextQuestion[nextQuestionOperate];
+  console.log(nextQuestionIndex);
+  nextQuestionIndex.classList.remove("hideQuestion");
+  nextQuestionIndex.classList.add("showQuestion");
+  correctAnswer.classList.remove("showCorrect");
+  correctAnswer.classList.add("hideCorrect");
+  totalSeconds = totalSeconds + 5;
+  playerScoreCount = playerScoreCount + 100000;
+  renderScore();
+}
+
+function moreBuiltForThis() {
+  nextQuestionOperate++;
+  console.log(nextQuestionOperate);
+  nextQuestionIndex = nextQuestion[nextQuestionOperate];
+  console.log(nextQuestionIndex);
+  nextQuestionIndex.classList.remove("hideQuestion");
+  nextQuestionIndex.classList.add("showQuestion");
+  wrongAnswer.classList.remove("showWrong");
+  wrongAnswer.classList.add("hideWrong");
+  totalSeconds = totalSeconds - 5;
+  playerScoreCount = playerScoreCount - 50000;
+  renderScore();
+}
+
+function renderScore() {
+  playerScoreEl.textContent = playerScoreCount;
+  console.log(playerScoreCount);
+}
 //End the quiz function.
-//Quiz ends when timer hits 0, 
-    function gameOverFunc() {
-    console.log("game over");
-    minutes.classList.add("hideMinutes");
-    seconds.classList.add("hideSeconds");
-    nextQuestionIndex.classList.remove("showQuestion");
-    nextQuestionIndex.classList.add("hideQuestion");
-    wrongAnswer.classList.remove("showWrong");
-    wrongAnswer.classList.add("hideWrong");
-    correctAnswer.classList.remove("showCorrect");
-    correctAnswer.classList.add("hideCorrect");
-    gameOverEl.classList.remove("hideGameOver");
-    gameOverEl.classList.add("showGameOver");
-    renderScore();
-    
-    let playerInitials = prompt("Game Over. Enter Your Initials.");
-    localStorage.setItem("lastFighterScore", playerScoreCount);
-    localStorage.setItem("lastFighter", playerInitials);    
-    }    
+//Quiz ends when timer hits 0,
+function gameOverFunc() {
+  console.log("game over");
+  minutes.classList.add("hideMinutes");
+  seconds.classList.add("hideSeconds");
+  nextQuestionIndex.classList.remove("showQuestion");
+  nextQuestionIndex.classList.add("hideQuestion");
+  wrongAnswer.classList.remove("showWrong");
+  wrongAnswer.classList.add("hideWrong");
+  correctAnswer.classList.remove("showCorrect");
+  correctAnswer.classList.add("hideCorrect");
+  gameOverEl.classList.remove("hideGameOver");
+  gameOverEl.classList.add("showGameOver");
+  renderScore();
 
-//Or player wins if they complete question 10 with time left.  
-    function question10EnderCorrect() {
-        playerScoreCount = playerScoreCount + 100000;
-        nextQuestionIndex.classList.remove("showQuestion");
-        nextQuestionIndex.classList.add("hideQuestion");
-        renderScore();
-        stopTheTimer();
-       
-        if (playerScoreCount > 0) {
-            goodEnding.classList.remove("hideGoodEnding");
-            goodEnding.classList.add("showGoodEnding");       
-            }
-        if (playerScoreCount < 0) {
-            badEnding.classList.remove("hideBadEnding");
-            badEnding.classList.add("showBadEnding");
-            }
-        let playerInitials = prompt("Yup, he won for The Last King of Scotland! Enter Your Initials.");
-        localStorage.setItem("lastFighterScore", playerScoreCount);
-        localStorage.setItem("lastFighter", playerInitials);     
-        }    
+  let playerInitials = prompt("Game Over. Enter Your Initials.");
+  localStorage.setItem("lastFighterScore", playerScoreCount);
+  localStorage.setItem("lastFighter", playerInitials);
+}
 
-    function question10EnderIncorrect() {
-        playerScoreCount = playerScoreCount - 50000;
-        nextQuestionIndex.classList.remove("showQuestion");
-        nextQuestionIndex.classList.add("hideQuestion");
-        renderScore();
-        stopTheTimer();
-   
-        if (playerScoreCount > 0) {
-            goodEnding.classList.remove("hideGoodEnding");
-            goodEnding.classList.add("showGoodEnding");       
-            }
-        if (playerScoreCount < 0) {
-            badEnding.classList.remove("hideBadEnding");
-            badEnding.classList.add("showBadEnding");
-            }
-        let playerInitials = prompt("Nope, it was Last King of Scotland. Enter Your Initials.");
-        localStorage.setItem("lastFighterScore", playerScoreCount);
-        localStorage.setItem("lastFighter", playerInitials);     
-        }     
-    
+//Or player wins if they complete question 10 with time left.
+function question10EnderCorrect() {
+  playerScoreCount = playerScoreCount + 100000;
+  nextQuestionIndex.classList.remove("showQuestion");
+  nextQuestionIndex.classList.add("hideQuestion");
+  renderScore();
+  stopTheTimer();
+
+  if (playerScoreCount > 0) {
+    goodEnding.classList.remove("hideGoodEnding");
+    goodEnding.classList.add("showGoodEnding");
+  }
+  if (playerScoreCount < 0) {
+    badEnding.classList.remove("hideBadEnding");
+    badEnding.classList.add("showBadEnding");
+  }
+  let playerInitials = prompt(
+    "Yup, he won for The Last King of Scotland! Enter Your Initials."
+  );
+  localStorage.setItem("lastFighterScore", playerScoreCount);
+  localStorage.setItem("lastFighter", playerInitials);
+}
+
+function question10EnderIncorrect() {
+  playerScoreCount = playerScoreCount - 50000;
+  nextQuestionIndex.classList.remove("showQuestion");
+  nextQuestionIndex.classList.add("hideQuestion");
+  renderScore();
+  stopTheTimer();
+
+  if (playerScoreCount > 0) {
+    goodEnding.classList.remove("hideGoodEnding");
+    goodEnding.classList.add("showGoodEnding");
+  }
+  if (playerScoreCount < 0) {
+    badEnding.classList.remove("hideBadEnding");
+    badEnding.classList.add("showBadEnding");
+  }
+  let playerInitials = prompt(
+    "Nope, it was Last King of Scotland. Enter Your Initials."
+  );
+  localStorage.setItem("lastFighterScore", playerScoreCount);
+  localStorage.setItem("lastFighter", playerInitials);
+}
+
 //Button click listeners.
 correctChoiceQ1El.addEventListener("click", correctAnswerSubmit);
 incorrectChoiceQ1El.addEventListener("click", incorrectAnswerSubmit);
