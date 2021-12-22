@@ -88,35 +88,28 @@ if (localStorage.getItem("score1") === null) {
   let defaultTopScores = [700000, 500000, 250000];
   let defaultTopFighters = ["EYK", "KMK", "OOK"];
   setDefaultTopScores = () => {
-    console.log("default top scores ran");
     let i = 1;
     defaultTopScores.forEach((score) => {
       let thisScore = `score${i}`;
       localStorage.setItem(thisScore, score);
       i++;
     });
-    console.log("we set default top scores");
   };
   setDefaultTopScores();
 
   setDefaultTopFighters = () => {
-    console.log("default top fighters ran");
     let i = 1;
     defaultTopFighters.forEach((fighter) => {
       let thisFighter = `fighter${i}`;
       localStorage.setItem(thisFighter, fighter);
       i++;
     });
-    console.log("we set top fighters default");
   };
   setDefaultTopFighters();
 }
 
 function beginKumite() {
-  console.log("beginKumite");
-  console.log(nextQuestionOperate);
   nextQuestionIndex = nextQuestion[nextQuestionOperate];
-  console.log(nextQuestionIndex);
   nextQuestionIndex.classList.remove("hideQuestion");
   nextQuestionIndex.classList.add("showQuestion");
   beginButton.classList.add("hideButton");
@@ -176,7 +169,6 @@ function getFormattedSeconds() {
 //Show next question function.
 //Here, consider an array with question1-10, and i increments each time a right or wrong answer screem is clicked.
 function correctAnswerSubmit() {
-  console.log("Correct Answer Submit");
   nextQuestionIndex.classList.remove("showQuestion");
   nextQuestionIndex.classList.add("hideQuestion");
   correctAnswer.classList.remove("hideCorrect");
@@ -184,7 +176,6 @@ function correctAnswerSubmit() {
 }
 
 function incorrectAnswerSubmit() {
-  console.log("Incorrect answer submit.");
   nextQuestionIndex.classList.remove("showQuestion");
   nextQuestionIndex.classList.add("hideQuestion");
   wrongAnswer.classList.remove("hideWrong");
@@ -193,9 +184,7 @@ function incorrectAnswerSubmit() {
 
 function kickMoreAss() {
   nextQuestionOperate++;
-  console.log(nextQuestionOperate);
   nextQuestionIndex = nextQuestion[nextQuestionOperate];
-  console.log(nextQuestionIndex);
   nextQuestionIndex.classList.remove("hideQuestion");
   nextQuestionIndex.classList.add("showQuestion");
   correctAnswer.classList.remove("showCorrect");
@@ -207,9 +196,7 @@ function kickMoreAss() {
 
 function moreBuiltForThis() {
   nextQuestionOperate++;
-  console.log(nextQuestionOperate);
   nextQuestionIndex = nextQuestion[nextQuestionOperate];
-  console.log(nextQuestionIndex);
   nextQuestionIndex.classList.remove("hideQuestion");
   nextQuestionIndex.classList.add("showQuestion");
   wrongAnswer.classList.remove("showWrong");
@@ -221,7 +208,6 @@ function moreBuiltForThis() {
 
 function renderScore() {
   playerScoreEl.textContent = playerScoreCount;
-  console.log(playerScoreCount);
 }
 //End the quiz function.
 //Quiz ends when timer hits 0,

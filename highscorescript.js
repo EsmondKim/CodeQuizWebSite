@@ -21,7 +21,7 @@ createFighterArray = () => {
 createFighterArray();
 console.log(currentTopFighters);
 
-//Area to change last score
+//Area to change last score for testing
 // testScoreFunction = () => {
 //   let lastScoreForTesting = 70001;
 //   let lastFighterForTesting = "New high";
@@ -29,9 +29,8 @@ console.log(currentTopFighters);
 //   localStorage.setItem("lastFighter", lastFighterForTesting);
 // };
 // testScoreFunction();
-//Area to change last score
+//Area to change last score for testing
 
-//Testing for new last score
 testLastScore = () => {
   if (localStorage.getItem("lastFighterScore") > currentTopScores[0]) {
     localStorage.setItem("score1", localStorage.getItem("lastFighterScore"));
@@ -43,42 +42,26 @@ testLastScore = () => {
     localStorage.setItem("score2", localStorage.getItem("lastFighterScore"));
     localStorage.setItem("fighter2", localStorage.getItem("lastFighter"));
   }
+  if (lastScore > currentTopScores[1]) {
+    localStorage.setItem("score3", current2Score);
+    localStorage.setItem("fighter3", current2Initials);
+    localStorage.setItem("score2", lastScore);
+    localStorage.setItem("fighter2", lastFighter);
+  }
+  if (lastScore === currentTopScores[1]) {
+    localStorage.setItem("score3", lastScore);
+    localStorage.setItem("fighter3", lastFighter);
+  }
+  if (lastScore > currentTopScores[2]) {
+    localStorage.setItem("score3", lastScore);
+    localStorage.setItem("fighter3", lastFighter);
+  }
+  if (lastScore === currentTopScores[2]) {
+    localStorage.setItem("score3", lastScore);
+    localStorage.setItem("fighter3", lastFighter);
+  }
 };
 testLastScore();
-// localStorage.setItem("lastFighterScore", null);
-// localStorage.setItem("lastFighter", null);
-//Testing for new last score
-
-// if (localStorage.getItem("lastFighterScore") > currentTopScores[0]) {
-//   localStorage.setItem("score1", localStorage.getItem("lastFighterScore"));
-//   localStorage.setItem("fighter1", localStorage.getItem("lastFighter"));
-//   window.location.reload();
-// }
-// if (localStorage.getItem("lastFighterScore") === currentTopScores[0]) {
-//   localStorage.setItem("score3", localStorage.getItem("score2"));
-//   localStorage.setItem("fighter3", localStorage.getItem("fighter2"));
-//   localStorage.setItem("score2", localStorage.getItem("lastFighterScore"));
-//   localStorage.setItem("fighter2", localStorage.getItem("lastFighter"));
-//   // window.location.reload();
-// }
-// if (lastScore > currentTopScores[1]) {
-//   localStorage.setItem("score3", current2Score);
-//   localStorage.setItem("fighter3", current2Initials);
-//   localStorage.setItem("score2", lastScore);
-//   localStorage.setItem("fighter2", lastFighter);
-// }
-// if (lastScore === currentTopScores[1]) {
-//   localStorage.setItem("score3", lastScore);
-//   localStorage.setItem("fighter3", lastFighter);
-// }
-// if (lastScore > currentTopScores[2]) {
-//   localStorage.setItem("score3", lastScore);
-//   localStorage.setItem("fighter3", lastFighter);
-// }
-// if (lastScore === currentTopScores[2]) {
-//   localStorage.setItem("score3", lastScore);
-//   localStorage.setItem("fighter3", lastFighter);
-// }
 
 renderTop3 = () => {
   let i = 1;
