@@ -35,6 +35,7 @@ testLastScore = () => {
   if (localStorage.getItem("lastFighterScore") > currentTopScores[0]) {
     localStorage.setItem("score1", localStorage.getItem("lastFighterScore"));
     localStorage.setItem("fighter1", localStorage.getItem("lastFighter"));
+    window.location.reload();
   }
   if (localStorage.getItem("lastFighterScore") === currentTopScores[0]) {
     localStorage.setItem("score3", localStorage.getItem("score2"));
