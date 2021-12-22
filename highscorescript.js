@@ -44,22 +44,22 @@ testLastScore = () => {
     localStorage.setItem("fighter2", localStorage.getItem("lastFighter"));
   }
   if (localStorage.getItem("lastFighterScore") > currentTopScores[1]) {
-    localStorage.setItem("score3", current2Score);
-    localStorage.setItem("fighter3", current2Initials);
-    localStorage.setItem("score2", lastScore);
-    localStorage.setItem("fighter2", lastFighter);
+    localStorage.setItem("score3", localStorage.getItem("score2"));
+    localStorage.setItem("fighter3", localStorage.getItem("fighter2");
+    localStorage.setItem("score2", localStorage.getItem("lastFighterScore"));
+    localStorage.setItem("fighter2", localStorage.getItem("lastFighter"));
   }
   if (localStorage.getItem("lastFighterScore") === currentTopScores[1]) {
-    localStorage.setItem("score3", lastScore);
-    localStorage.setItem("fighter3", lastFighter);
+    localStorage.setItem("score3", localStorage.getItem("lastFighterScore"));
+    localStorage.setItem("fighter3", localStorage.getItem("lastFighter"));
   }
   if (localStorage.getItem("lastFighterScore") > currentTopScores[2]) {
-    localStorage.setItem("score3", lastScore);
-    localStorage.setItem("fighter3", lastFighter);
+    localStorage.setItem("score3", localStorage.getItem("lastFighterScore"));
+    localStorage.setItem("fighter3", localStorage.getItem("lastFighter"));
   }
   if (localStorage.getItem("lastFighterScore") === currentTopScores[2]) {
-    localStorage.setItem("score3", lastScore);
-    localStorage.setItem("fighter3", lastFighter);
+    localStorage.setItem("score3", localStorage.getItem("lastFighterScore"));
+    localStorage.setItem("fighter3", localStorage.getItem("lastFighter"));
   }
   localStorage.setItem("lastFighterScore", null);
   localStorage.setItem("lastFighter", null);
