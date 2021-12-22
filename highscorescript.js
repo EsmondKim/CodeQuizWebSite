@@ -35,34 +35,43 @@ testLastScore = () => {
   if (localStorage.getItem("lastFighterScore") > currentTopScores[0]) {
     localStorage.setItem("score1", localStorage.getItem("lastFighterScore"));
     localStorage.setItem("fighter1", localStorage.getItem("lastFighter"));
-    window.location.reload();
+    localStorage.setItem("lastFighterScore", null);
+    localStorage.setItem("lastFighter", null);
   }
   if (localStorage.getItem("lastFighterScore") === currentTopScores[0]) {
     localStorage.setItem("score3", localStorage.getItem("score2"));
     localStorage.setItem("fighter3", localStorage.getItem("fighter2"));
     localStorage.setItem("score2", localStorage.getItem("lastFighterScore"));
     localStorage.setItem("fighter2", localStorage.getItem("lastFighter"));
+    localStorage.setItem("lastFighterScore", null);
+    localStorage.setItem("lastFighter", null);
   }
   if (localStorage.getItem("lastFighterScore") > currentTopScores[1]) {
     localStorage.setItem("score3", localStorage.getItem("score2"));
     localStorage.setItem("fighter3", localStorage.getItem("fighter2");
     localStorage.setItem("score2", localStorage.getItem("lastFighterScore"));
     localStorage.setItem("fighter2", localStorage.getItem("lastFighter"));
+    localStorage.setItem("lastFighterScore", null);
+    localStorage.setItem("lastFighter", null);
   }
   if (localStorage.getItem("lastFighterScore") === currentTopScores[1]) {
     localStorage.setItem("score3", localStorage.getItem("lastFighterScore"));
     localStorage.setItem("fighter3", localStorage.getItem("lastFighter"));
+    localStorage.setItem("lastFighterScore", null);
+    localStorage.setItem("lastFighter", null);
   }
   if (localStorage.getItem("lastFighterScore") > currentTopScores[2]) {
     localStorage.setItem("score3", localStorage.getItem("lastFighterScore"));
     localStorage.setItem("fighter3", localStorage.getItem("lastFighter"));
+    localStorage.setItem("lastFighterScore", null);
+    localStorage.setItem("lastFighter", null);
   }
   if (localStorage.getItem("lastFighterScore") === currentTopScores[2]) {
     localStorage.setItem("score3", localStorage.getItem("lastFighterScore"));
     localStorage.setItem("fighter3", localStorage.getItem("lastFighter"));
+    localStorage.setItem("lastFighterScore", null);
+    localStorage.setItem("lastFighter", null);
   }
-  localStorage.setItem("lastFighterScore", null);
-  localStorage.setItem("lastFighter", null);
 };
 testLastScore();
 
