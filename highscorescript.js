@@ -60,10 +60,10 @@ testLastScore = () => {
     localStorage.setItem("score3", lastScore);
     localStorage.setItem("fighter3", lastFighter);
   }
+  localStorage.setItem("lastFighterScore", null);
+  localStorage.setItem("lastFighter", null);
 };
 testLastScore();
-localStorage.setItem("lastFighterScore", null);
-localStorage.setItem("lastFighter", null);
 
 renderTop3 = () => {
   let i = 1;
