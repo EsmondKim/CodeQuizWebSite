@@ -1,69 +1,103 @@
-// let lastFighterScoreEl = document.querySelector("#lastFighterScore");
-// let lastFighterEl = document.querySelector("#lastFighter");
+let currentTopScores = [];
+let currentTopFighters = [];
 
-// lastFighterScoreEl.textContent = localStorage.getItem("lastFighterScore");
-// lastFighterEl.textContent = localStorage.getItem("lastFighter");
+createScoreArray = () => {
+  for (let i = 1; i < 4; i++) {
+    let thisScore = `score${i}`;
+    let getScore = localStorage.getItem(thisScore);
+    currentTopScores.push(getScore);
+  }
+};
+createScoreArray();
+console.log(currentTopScores);
 
-let score2El = document.querySelector("#score2");
-let score3El = document.querySelector("#score3");
-let initials1El = document.querySelector("#initials1");
-let initials2El = document.querySelector("#initials2");
-let initials3El = document.querySelector("#initials3");
+createFighterArray = () => {
+  for (let i = 1; i < 4; i++) {
+    let thisFighter = `fighter${i}`;
+    let getFighter = localStorage.getItem(thisFighter);
+    currentTopFighters.push(getFighter);
+  }
+};
+createFighterArray();
+console.log(currentTopFighters);
 
-let lastFghtrScr = localStorage.getItem("lastFighterScore");
-let lastFghtrIntl = localStorage.getItem("lastFighter");
-let topScores = [700000, 500000, 250000];
-let topFighters = ["EYK", "KMK", "OOK"];
+//Area to change last score
+// testScoreFunction = () => {
+//   let lastScoreForTesting = 70001;
+//   let lastFighterForTesting = "New high";
+//   localStorage.setItem("lastFighterScore", lastScoreForTesting);
+//   localStorage.setItem("lastFighter", lastFighterForTesting);
+// };
+// testScoreFunction();
+//Area to change last score
+
+//Testing for new last score
+testLastScore = () => {
+  if (localStorage.getItem("lastFighterScore") > currentTopScores[0]) {
+    localStorage.setItem("score1", localStorage.getItem("lastFighterScore"));
+    localStorage.setItem("fighter1", localStorage.getItem("lastFighter"));
+  }
+  if (localStorage.getItem("lastFighterScore") === currentTopScores[0]) {
+    localStorage.setItem("score3", localStorage.getItem("score2"));
+    localStorage.setItem("fighter3", localStorage.getItem("fighter2"));
+    localStorage.setItem("score2", localStorage.getItem("lastFighterScore"));
+    localStorage.setItem("fighter2", localStorage.getItem("lastFighter"));
+  }
+};
+testLastScore();
+// localStorage.setItem("lastFighterScore", null);
+// localStorage.setItem("lastFighter", null);
+//Testing for new last score
+
+// if (localStorage.getItem("lastFighterScore") > currentTopScores[0]) {
+//   localStorage.setItem("score1", localStorage.getItem("lastFighterScore"));
+//   localStorage.setItem("fighter1", localStorage.getItem("lastFighter"));
+//   window.location.reload();
+// }
+// if (localStorage.getItem("lastFighterScore") === currentTopScores[0]) {
+//   localStorage.setItem("score3", localStorage.getItem("score2"));
+//   localStorage.setItem("fighter3", localStorage.getItem("fighter2"));
+//   localStorage.setItem("score2", localStorage.getItem("lastFighterScore"));
+//   localStorage.setItem("fighter2", localStorage.getItem("lastFighter"));
+//   // window.location.reload();
+// }
+// if (lastScore > currentTopScores[1]) {
+//   localStorage.setItem("score3", current2Score);
+//   localStorage.setItem("fighter3", current2Initials);
+//   localStorage.setItem("score2", lastScore);
+//   localStorage.setItem("fighter2", lastFighter);
+// }
+// if (lastScore === currentTopScores[1]) {
+//   localStorage.setItem("score3", lastScore);
+//   localStorage.setItem("fighter3", lastFighter);
+// }
+// if (lastScore > currentTopScores[2]) {
+//   localStorage.setItem("score3", lastScore);
+//   localStorage.setItem("fighter3", lastFighter);
+// }
+// if (lastScore === currentTopScores[2]) {
+//   localStorage.setItem("score3", lastScore);
+//   localStorage.setItem("fighter3", lastFighter);
+// }
 
 renderTop3 = () => {
-  //   let score1El = document.querySelector("#score1");
-  //   score1El.textContent = topScores[0];
-
   let i = 1;
-  topScores.forEach((score) => {
+  currentTopScores.forEach((score) => {
     let templateLiteralId = `#score${i}`;
-    // let templateLiteralEl = `score${i}El`;
     templateLiteral = document.querySelector(templateLiteralId);
-    console.log(templateLiteral);
     templateLiteral.textContent = score;
-    console.log(score);
     i++;
-    console.log("through loop once");
-    console.log(i);
   });
 };
-
 renderTop3();
 
 renderTopInitials = () => {
-  //   let score1El = document.querySelector("#score1");
-  //   score1El.textContent = topScores[0];
-
   let i = 1;
-  topFighters.forEach((fighter) => {
+  currentTopFighters.forEach((fighter) => {
     let templateLiteralId = `#initials${i}`;
-    // let templateLiteralEl = `score${i}El`;
     templateLiteral = document.querySelector(templateLiteralId);
-    console.log(templateLiteral);
     templateLiteral.textContent = fighter;
-    console.log(fighter);
     i++;
-    console.log("through loop once");
-    console.log(i);
   });
 };
-
 renderTopInitials();
-
-// topScores.map((score) => {
-//   topScores((a, b) => b - a);
-//   if (lastFghtrScr > score) {
-//     topScores.slice(0, -1);
-//     topFghtrs.slice(0, -1);
-//     topScores.unshift(score);
-//     topFghtrs.unshift(lastFghtrIntl);
-//   }
-//   if (lastFghtrScr === score) {
-//     |
-//   }
-// });

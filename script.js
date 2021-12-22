@@ -84,6 +84,34 @@ let totalSeconds = 120;
 let playerScoreEl = document.querySelector("#playerScore");
 let playerScoreCount = 0;
 
+if (localStorage.getItem("score1") === null) {
+  let defaultTopScores = [700000, 500000, 250000];
+  let defaultTopFighters = ["EYK", "KMK", "OOK"];
+  setDefaultTopScores = () => {
+    console.log("default top scores ran");
+    let i = 1;
+    defaultTopScores.forEach((score) => {
+      let thisScore = `score${i}`;
+      localStorage.setItem(thisScore, score);
+      i++;
+    });
+    console.log("we set default top scores");
+  };
+  setDefaultTopScores();
+
+  setDefaultTopFighters = () => {
+    console.log("default top fighters ran");
+    let i = 1;
+    defaultTopFighters.forEach((fighter) => {
+      let thisFighter = `fighter${i}`;
+      localStorage.setItem(thisFighter, fighter);
+      i++;
+    });
+    console.log("we set top fighters default");
+  };
+  setDefaultTopFighters();
+}
+
 function beginKumite() {
   console.log("beginKumite");
   console.log(nextQuestionOperate);
