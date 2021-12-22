@@ -62,6 +62,8 @@ testLastScore = () => {
   }
 };
 testLastScore();
+localStorage.setItem("lastFighterScore", null);
+localStorage.setItem("lastFighter", null);
 
 renderTop3 = () => {
   let i = 1;
