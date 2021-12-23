@@ -23,17 +23,13 @@ console.log(currentTopFighters);
 
 //Area to change last score for testing
 // testScoreFunction = () => {
-//   let lastScoreForTesting = 650000;
-//   let lastFighterForTesting = "Player overtakes Current 2, Test 1";
+//   let lastScoreForTesting = 650050;
+//   let lastFighterForTesting = "New new new 3!";
 //   localStorage.setItem("lastFighterScore", lastScoreForTesting);
 //   localStorage.setItem("lastFighter", lastFighterForTesting);
 // };
 // testScoreFunction();
 //Area to change last score for testing
-
-// Code snippet to null out lastFighterScore and lastFighter, in case that helps with logic later.
-//   localStorage.setItem("lastFighterScore", null);
-//   localStorage.setItem("lastFighter", null);
 
 let lastScore = localStorage.getItem("lastFighterScore");
 let lastFighterInitials = localStorage.getItem("lastFighter");
@@ -48,12 +44,6 @@ testLastScore = () => {
     localStorage.setItem("fighter1", lastFighterInitials);
     window.location.reload();
   }
-  // if (localStorage.getItem("lastFighterScore") === currentTopScores[0]) {
-  //   localStorage.setItem("score3", localStorage.getItem("score2"));
-  //   localStorage.setItem("fighter3", localStorage.getItem("fighter2"));
-  //   localStorage.setItem("score2", localStorage.getItem("lastFighterScore"));
-  //   localStorage.setItem("fighter2", localStorage.getItem("lastFighter"));
-  // }
   if (lastScore > currentTopScores[1] && lastScore < current1Score) {
     localStorage.setItem("score3", current2Score);
     localStorage.setItem("fighter3", current2Fighter);
@@ -61,18 +51,11 @@ testLastScore = () => {
     localStorage.setItem("fighter2", lastFighterInitials);
     window.location.reload();
   }
-  // if (localStorage.getItem("lastFighterScore") === currentTopScores[1]) {
-  //   localStorage.setItem("score3", localStorage.getItem("lastFighterScore"));
-  //   localStorage.setItem("fighter3", localStorage.getItem("lastFighter"));
   if (lastScore > currentTopScores[2] && lastScore < current2Score) {
     localStorage.setItem("score3", lastScore);
     localStorage.setItem("fighter3", lastFighterInitials);
     window.location.reload();
   }
-  // if (localStorage.getItem("lastFighterScore") === currentTopScores[2]) {
-  //   localStorage.setItem("score3", localStorage.getItem("lastFighterScore"));
-  //   localStorage.setItem("fighter3", localStorage.getItem("lastFighter"));
-  // }
 };
 testLastScore();
 
